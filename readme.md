@@ -15,7 +15,7 @@ I am building a simple database for a non-GUI cocktail book.
 
 * [Udemy](https://www.udemy.com/) - Free and affordable online courses
 * [Repl.it](https://repl.it/) - Online REPL, Compiler, and IDE, as well as 'graded' courses
-* [Data Science from Scratch](https://www.amazon.com)
+* [Data Science from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X/ref=sr_1_2?keywords=data+science+from+scratch&qid=1554394274&s=gateway&sr=8-2m) - Joel Grus
 * [Python Crash Course](https://www.amazon.com/dp/1593276036/ref=olp_product_details?_encoding=UTF8&me=) - Eric Matthes
 * [Learning Python](https://www.amazon.com/dp/1449355730/ref=olp_product_details?_encoding=UTF8&me=) - Mark Lutz
 * [Learn Python 3 the Hard Way](https://www.amazon.com/dp/0134692888/ref=olp_product_details?_encoding=UTF8&me=) - Zed A. Shaw
