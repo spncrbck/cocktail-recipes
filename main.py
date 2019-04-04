@@ -31,5 +31,49 @@ manhattan = [
 ]
 
 recipes = [moscow_mule, gin_and_tonic, manhattan]
+'''
+def newRecipe():
+    add_name = str(input("Waht is this drink called? "))
+    add_ingredients()
+    add_garnish = str(input("What is the garnish? "))
+    add_served = str(input("How is it served? "))
+    add_vessel = str(input("In what kind of glass or drinkware is it served? "))
+    add_name = [
+        {
+            'ingredients': add_ingredients,
+            'garnish': add_garnish,
+            'served': add_served,
+            'vessel': add_vessel
+        }
+    ]
+    return recipes + add_name
 
-print(recipes)
+def add_ingredients():
+    ingredients_names = input("Please give ingredients in the form of a list of strings: ")
+    ingredients_amounts = input("Please give ingredients amounts in the form of a list of floats: ")
+    ingredients_units = input("Please give ingredient units in the form of a list of strings: ")
+    return [ingredients_names, ingredients_amounts, ingredients_units]
+'''
+
+add_name = str(input("What is this drink called? "))
+add_ingredients = [
+    input("Please give ingredients in the form of a list of strings: "),
+    input("Please give ingredients amounts in the form of a list of floats: "),
+    input("Please give ingredient units in the form of a list of strings: ")
+]
+add_garnish = str(input("What is the garnish? "))
+add_served = str(input("How is it served? "))
+add_vessel = str(input("In what kind of glass or drinkware is it served? "))
+
+add_name = [
+    {
+        'ingredients': add_ingredients,
+        'garnish': add_garnish,
+        'served': add_served,
+        'vessel': add_vessel
+    }
+]
+
+recipes + add_name
+
+print(recipes[-1])
