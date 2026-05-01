@@ -1,28 +1,55 @@
-# The Cocktail Recipe Database Project
+# Cocktail Recipe Browser
 
-I am building a simple database for a non-GUI cocktail book.
+A web app for browsing and searching cocktail recipes.
 
-### Features Wishlist
+## Live App
 
-* Stores drink name, ingredients and their amounts (with units of measurement), garnish, serving style, and drink vessel used.
-* Allows user to search for recipes based on one or more ingredients; returns as a list with the drink name and ingredients (nothing more).
-* User inputs drink name and recipe is returned as described in first bullet above.
-* User can add drink recipes.
-* User can add their own ingredients to a "bar" and sort for drinks they can make with said ingredients.
-* Drink output can be randomized to give the user a "surprise" recipe.
+**URL**: https://cocktail-recipes-pr3g.onrender.com
 
-### Resources Used
+The app is hosted on Render and auto-deploys when changes are pushed to `master`.
 
-* [Udemy](https://www.udemy.com/) - Free and affordable online courses
-* [Repl.it](https://repl.it/) - Online REPL, Compiler, and IDE, as well as 'graded' courses
-* [Data Science from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X/ref=sr_1_2?keywords=data+science+from+scratch&qid=1554394274&s=gateway&sr=8-2m) - Joel Grus
-* [Python Crash Course](https://www.amazon.com/dp/1593276036/ref=olp_product_details?_encoding=UTF8&me=) - Eric Matthes
-* [Learning Python](https://www.amazon.com/dp/1449355730/ref=olp_product_details?_encoding=UTF8&me=) - Mark Lutz
-* [Learn Python 3 the Hard Way](https://www.amazon.com/dp/0134692888/ref=olp_product_details?_encoding=UTF8&me=) - Zed A. Shaw
-* [Python Cookbook](https://www.amazon.com/dp/1449340377/ref=olp_product_details?_encoding=UTF8&me=) - David Beazley and Brian K. Jones
-* [Python for Data Analysis](https://www.amazon.com/dp/1491957662/ref=olp_product_details?_encoding=UTF8&me=) - Wes McKinney
-* [Mining the Social Web](https://www.amazon.com/dp/1449367615/ref=olp_product_details?_encoding=UTF8&me=) - Matthew A. Russell
+## Features
 
-### Development Environment
+- **Browse recipes** — View all cocktail recipes as cards with ingredients, garnish, serving style, and vessel
+- **Live search** — Search by recipe name or ingredient name in real-time
+- **Read-only** — The app is intentionally read-only; all recipe data is managed by editing `recipes.json`
 
-All pushed development is done via [Microsoft Visual Studio Code](https://code.visualstudio.com/) on W10 with GitHub integration. I also use a [Jupyter notebook](https://jupyter.org/) and [Repl.it](https://repl.it/) to test code.
+## Tech Stack
+
+- **Backend**: Python / Flask
+- **Database**: SQLite (auto-created from `recipes.json` on startup)
+- **Frontend**: Vanilla HTML / CSS / JavaScript
+
+## Data Schema
+
+```
+recipes:     id, name, garnish, served, vessel
+ingredients: id, recipe_id, name, amount, unit
+```
+
+## Running Locally
+
+```bash
+pip install -r requirements.txt
+python app.py
+# Open http://localhost:5000
+```
+
+## Adding or Editing Recipes
+
+All recipe data is stored in `recipes.json`. To add or edit a recipe:
+
+1. Edit `recipes.json`
+2. Commit and push to `master`
+3. The app will automatically rebuild from the updated file
+
+The SQLite database is ephemeral and is regenerated from `recipes.json` on every startup, so never edit it directly.
+
+## Planned Features
+
+- Bar inventory matcher — check off ingredients you have, see what you can make
+- Missing ingredient suggestions — show drinks that are one ingredient away
+- Random drink picker — surprise recipe button
+- Filter by spirit, vessel, or serving style
+- Ingredient substitution hints
+- Print / export functionality
