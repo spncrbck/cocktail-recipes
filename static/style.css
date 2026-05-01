@@ -1,6 +1,7 @@
 /* ── Reset & Custom Properties ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Dark mode (default) */
 :root {
   --bg:           #0f0f0f;
   --surface:      #161616;
@@ -11,6 +12,8 @@
   --text:         #f0ebe0;
   --text-muted:   #8a8074;
   --text-dim:     #4a4540;
+  --header-bg:    rgba(15, 15, 15, 0.92);
+  --noise-opacity: 0.045;
 
   --gin:      #7d9e84;
   --rum:      #c4882a;
@@ -23,6 +26,28 @@
   --radius-chip: 999px;
 }
 
+/* Light mode — warm parchment palette */
+[data-theme="light"] {
+  --bg:           #faf5ee;
+  --surface:      #f3e9d8;
+  --surface-2:    #eadbca;
+  --border:       #d4c4aa;
+  --gold:         #7a5c14;
+  --gold-dim:     #a8841c;
+  --text:         #1e1610;
+  --text-muted:   #5e4e38;
+  --text-dim:     #9c876c;
+  --header-bg:    rgba(250, 245, 238, 0.92);
+  --noise-opacity: 0.025;
+
+  --gin:      #3d6e48;
+  --rum:      #8a5010;
+  --whiskey:  #6e4020;
+  --tequila:  #7a6010;
+  --vodka:    #365870;
+  --other:    #585868;
+}
+
 /* ── Noise texture ── */
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -30,7 +55,8 @@ body {
   background-color: var(--bg);
   color: var(--text);
   min-height: 100vh;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='var(--noise-opacity)'/%3E%3C/svg%3E");
+  transition: background-color 0.2s, color 0.2s;
 }
 
 /* ── Typography ── */
@@ -41,10 +67,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(15, 15, 15, 0.92);
+  background-color: var(--header-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .header-top {
@@ -89,6 +116,34 @@ body {
   max-width: 480px;
   position: relative;
 }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  flex-shrink: 0;
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon { display: none; }
+
+[data-theme="light"] .theme-toggle .icon-sun  { display: block; }
+:root:not([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
 
 .search-wrap svg {
   position: absolute;

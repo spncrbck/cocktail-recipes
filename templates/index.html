@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muddled</title>
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,6 +17,15 @@
       <a class="site-title" href="/">
         <span class="title-word title-accent">Muddled</span>
       </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.5 1.5a6 6 0 1 0 6 6 4.5 4.5 0 0 1-6-6Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7.5" cy="7.5" r="2.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M7.5 1v1.5M7.5 12.5V14M1 7.5h1.5M12.5 7.5H14M3.1 3.1l1.05 1.05M10.85 10.85l1.05 1.05M10.85 4.15l1.05-1.05M3.1 11.9l1.05-1.05" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </button>
       <div class="search-wrap">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.303 10.364C8.53 10.886 7.55 11.2 6.5 11.2C3.906 11.2 1.8 9.094 1.8 6.5C1.8 3.906 3.906 1.8 6.5 1.8C9.094 1.8 11.2 3.906 11.2 6.5C11.2 7.55 10.886 8.53 10.364 9.303L13.03 11.97C13.264 12.204 13.264 12.586 13.03 12.82C12.796 13.054 12.414 13.054 12.18 12.82L9.303 10.364Z" fill="currentColor"/>
@@ -367,6 +377,14 @@
         else            barSpirits.delete(cb.value);
         applyFilters();
       });
+    });
+
+    /* ── Theme toggle ── */
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const isLight = document.documentElement.dataset.theme === 'light';
+      const next = isLight ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
     });
 
     loadRecipes();
