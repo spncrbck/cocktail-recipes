@@ -1,7 +1,7 @@
 import json
 import os
 import sqlite3
-from flask import Flask, g, jsonify, render_template, request
+from flask import Flask, g, jsonify, render_template, request, abort
 
 app = Flask(__name__)
 DB_PATH = os.path.join(os.path.dirname(__file__), "recipes.db")
@@ -27,11 +27,13 @@ def init_db():
     db = get_db()
     db.executescript("""
         CREATE TABLE IF NOT EXISTS recipes (
-            id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            name    TEXT NOT NULL,
-            garnish TEXT,
-            served  TEXT,
-            vessel  TEXT
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            name         TEXT NOT NULL,
+            garnish      TEXT,
+            served       TEXT,
+            vessel       TEXT,
+            flavor_tags  TEXT,
+            flavor_desc  TEXT
         );
         CREATE TABLE IF NOT EXISTS ingredients (
             id        INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,11 +47,19 @@ def init_db():
         with open(RECIPES_PATH) as f:
             seed = json.load(f)
         for drink in seed:
+            tags = json.dumps(drink.get("flavor_tags", []))
             cur = db.execute(
-                "INSERT INTO recipes (name, garnish, served, vessel) VALUES (?, ?, ?, ?)",
-                (drink["name"], drink["garnish"], drink["served"], drink["vessel"]),
+                "INSERT INTO recipes (name, garnish, served, vessel, flavor_tags, flavor_desc) VALUES (?, ?, ?, ?, ?, ?)",
+                (
+                    drink["name"],
+                    drink.get("garnish", ""),
+                    drink.get("served", ""),
+                    drink.get("vessel", ""),
+                    tags,
+                    drink.get("flavor_description", ""),
+                ),
             )
-            for ing in drink["ingredients"]:
+            for ing in drink.get("ingredients", []):
                 db.execute(
                     "INSERT INTO ingredients (recipe_id, name, amount, unit) VALUES (?, ?, ?, ?)",
                     (cur.lastrowid, ing["name"], ing["amount"], ing["unit"]),
@@ -68,6 +78,8 @@ def recipe_row_to_dict(row, db):
         "garnish": row["garnish"],
         "served": row["served"],
         "vessel": row["vessel"],
+        "flavor_tags": json.loads(row["flavor_tags"] or "[]"),
+        "flavor_description": row["flavor_desc"] or "",
         "ingredients": [
             {"name": i["name"], "amount": i["amount"], "unit": i["unit"]} for i in ingredients
         ],
@@ -79,6 +91,16 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/recipe/<int:recipe_id>")
+def recipe_detail(recipe_id):
+    db = get_db()
+    row = db.execute("SELECT * FROM recipes WHERE id = ?", (recipe_id,)).fetchone()
+    if row is None:
+        abort(404)
+    recipe = recipe_row_to_dict(row, db)
+    return render_template("recipe.html", recipe=recipe)
+
+
 @app.route("/api/recipes")
 def list_recipes():
     db = get_db()
@@ -86,7 +108,7 @@ def list_recipes():
     if q:
         rows = db.execute(
             """
-            SELECT DISTINCT r.id, r.name, r.garnish, r.served, r.vessel
+            SELECT DISTINCT r.id, r.name, r.garnish, r.served, r.vessel, r.flavor_tags, r.flavor_desc
             FROM recipes r
             LEFT JOIN ingredients i ON i.recipe_id = r.id
             WHERE r.name LIKE ? OR i.name LIKE ?
@@ -97,6 +119,15 @@ def list_recipes():
     else:
         rows = db.execute("SELECT * FROM recipes ORDER BY name").fetchall()
     return jsonify([recipe_row_to_dict(row, db) for row in rows])
+
+
+@app.route("/api/recipes/<int:recipe_id>")
+def get_recipe(recipe_id):
+    db = get_db()
+    row = db.execute("SELECT * FROM recipes WHERE id = ?", (recipe_id,)).fetchone()
+    if row is None:
+        abort(404)
+    return jsonify(recipe_row_to_dict(row, db))
 
 
 with app.app_context():

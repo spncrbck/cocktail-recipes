@@ -4,17 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cocktail Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <header>
-    <h1>Cocktail Recipes</h1>
-    <input
-      type="text"
-      id="search"
-      placeholder="Search by name or ingredient..."
-      autocomplete="off"
-    >
+
+  <header class="site-header">
+    <div class="header-top">
+      <a class="site-title" href="/">
+        <span class="title-word">Cocktail</span>
+        <span class="title-dot"></span>
+        <span class="title-word title-accent">Recipes</span>
+      </a>
+      <div class="search-wrap">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.303 10.364C8.53 10.886 7.55 11.2 6.5 11.2C3.906 11.2 1.8 9.094 1.8 6.5C1.8 3.906 3.906 1.8 6.5 1.8C9.094 1.8 11.2 3.906 11.2 6.5C11.2 7.55 10.886 8.53 10.364 9.303L13.03 11.97C13.264 12.204 13.264 12.586 13.03 12.82C12.796 13.054 12.414 13.054 12.18 12.82L9.303 10.364Z" fill="currentColor"/>
+        </svg>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search by name or ingredient…"
+          autocomplete="off"
+          spellcheck="false"
+        >
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-row">
+        <span class="filter-label">Spirit</span>
+        <div class="filter-chips" id="spirit-filters">
+          <button class="chip active" data-spirit="all">All</button>
+          <button class="chip" data-spirit="gin">Gin</button>
+          <button class="chip" data-spirit="rum">Rum</button>
+          <button class="chip" data-spirit="whiskey">Whiskey</button>
+          <button class="chip" data-spirit="tequila">Tequila</button>
+          <button class="chip" data-spirit="vodka">Vodka</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Vibe</span>
+        <div class="filter-chips" id="vibe-filters">
+          <button class="chip active" data-vibe="all">All</button>
+          <button class="chip" data-vibe="citrusy">Citrusy</button>
+          <button class="chip" data-vibe="refreshing">Refreshing</button>
+          <button class="chip" data-vibe="bitter">Bitter</button>
+          <button class="chip" data-vibe="smoky">Smoky</button>
+          <button class="chip" data-vibe="tropical">Tropical</button>
+          <button class="chip" data-vibe="herbal">Herbal</button>
+          <button class="chip" data-vibe="fruity">Fruity</button>
+          <button class="chip" data-vibe="creamy">Creamy</button>
+          <button class="chip" data-vibe="spicy">Spicy</button>
+          <button class="chip" data-vibe="boozy">Boozy</button>
+          <button class="chip" data-vibe="floral">Floral</button>
+          <button class="chip" data-vibe="sweet">Sweet</button>
+          <button class="chip" data-vibe="rich">Rich</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bar-section">
+      <button class="bar-toggle" id="bar-toggle">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        What's in your bar?
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:auto">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="bar-panel" id="bar-panel">
+        <p class="bar-intro">Check what you have — only see drinks you can make.</p>
+        <div class="bar-spirits">
+          <label><input type="checkbox" value="gin"> Gin</label>
+          <label><input type="checkbox" value="rum"> Rum</label>
+          <label><input type="checkbox" value="whiskey"> Whiskey / Bourbon / Rye</label>
+          <label><input type="checkbox" value="scotch"> Scotch</label>
+          <label><input type="checkbox" value="tequila"> Tequila</label>
+          <label><input type="checkbox" value="mezcal"> Mezcal</label>
+          <label><input type="checkbox" value="vodka"> Vodka</label>
+          <label><input type="checkbox" value="campari"> Campari</label>
+          <label><input type="checkbox" value="aperol"> Aperol</label>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -22,45 +97,261 @@
   </main>
 
   <script>
-    const searchEl = document.getElementById('search');
-    const recipesEl = document.getElementById('recipes');
+    /* ── Spirit detection ── */
+    const SPIRITS = {
+      gin:     { pattern: /\bgin\b/i,                                  color: 'var(--gin)',     label: 'Gin' },
+      rum:     { pattern: /\brum\b/i,                                  color: 'var(--rum)',     label: 'Rum' },
+      whiskey: { pattern: /\b(whiskey|whisky|bourbon|rye|scotch|laphroaig|irish whiskey)\b/i, color: 'var(--whiskey)', label: 'Whiskey' },
+      tequila: { pattern: /\b(tequila|mezcal)\b/i,                     color: 'var(--tequila)', label: 'Tequila / Mezcal' },
+      vodka:   { pattern: /\bvodka\b/i,                                color: 'var(--vodka)',   label: 'Vodka' },
+    };
 
-    async function loadRecipes(q = '') {
-      const url = q ? `/api/recipes?q=${encodeURIComponent(q)}` : '/api/recipes';
-      const res = await fetch(url);
-      const recipes = await res.json();
-      render(recipes);
+    function detectSpirit(ingredients) {
+      const names = ingredients.map(i => i.name).join(' ');
+      for (const [key, s] of Object.entries(SPIRITS)) {
+        if (s.pattern.test(names)) return key;
+      }
+      return 'other';
     }
 
-    function formatAmount(amount) {
-      // Show integers without decimal (2 not 2.0)
-      return Number.isInteger(amount) ? amount : amount;
+    function spiritColor(spirit) {
+      return SPIRITS[spirit]?.color || 'var(--other)';
     }
 
+    function spiritLabel(spirit) {
+      return SPIRITS[spirit]?.label || 'Other';
+    }
+
+    /* ── Glassware SVGs ── */
+    const STROKE_ATTRS = `fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"`;
+
+    function glasswaresVG(vessel) {
+      const v = (vessel || '').toLowerCase();
+
+      if (v.includes('coupe')) return `
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <path d="M 9 26 Q 30 10 51 26"/>
+          <path d="M 9 26 Q 14 50 30 55"/>
+          <path d="M 51 26 Q 46 50 30 55"/>
+          <line x1="30" y1="55" x2="30" y2="69"/>
+          <line x1="19" y1="69" x2="41" y2="69"/>
+        </svg>`;
+
+      if (v.includes('highball')) return `
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <path d="M 19 10 L 17 70 L 43 70 L 41 10 Z"/>
+        </svg>`;
+
+      if (v.includes('rocks')) return `
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <path d="M 12 30 L 10 68 L 50 68 L 48 30 Z"/>
+        </svg>`;
+
+      if (v.includes('martini')) return `
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <line x1="9" y1="17" x2="51" y2="17"/>
+          <line x1="9" y1="17" x2="30" y2="54"/>
+          <line x1="51" y1="17" x2="30" y2="54"/>
+          <line x1="30" y1="54" x2="30" y2="68"/>
+          <line x1="20" y1="68" x2="40" y2="68"/>
+        </svg>`;
+
+      if (v.includes('mug') || v.includes('copper')) return `
+        <svg viewBox="0 0 70 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <rect x="12" y="20" width="34" height="46" rx="3"/>
+          <path d="M 46 32 Q 58 32 58 43 Q 58 54 46 54"/>
+          <line x1="10" y1="27" x2="48" y2="27"/>
+        </svg>`;
+
+      if (v.includes('tiki')) return `
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <path d="M 13 12 L 10 68 L 50 68 L 47 12 Z"/>
+          <line x1="11" y1="27" x2="49" y2="27"/>
+          <line x1="10" y1="50" x2="50" y2="50"/>
+        </svg>`;
+
+      /* default: generic stemmed glass */
+      return `
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" ${STROKE_ATTRS}>
+          <path d="M 12 16 Q 12 46 30 52 Q 48 46 48 16 Z"/>
+          <line x1="30" y1="52" x2="30" y2="68"/>
+          <line x1="19" y1="68" x2="41" y2="68"/>
+        </svg>`;
+    }
+
+    /* ── Amount formatting ── */
+    function fmt(amount) {
+      if (amount === null || amount === undefined) return '';
+      if (Number.isInteger(amount)) return amount;
+      const fracs = { 0.25: '¼', 0.5: '½', 0.75: '¾', 0.33: '⅓', 0.67: '⅔' };
+      const nearest = Object.keys(fracs).find(f => Math.abs(amount - f) < 0.01);
+      if (nearest) return fracs[nearest];
+      const whole = Math.floor(amount);
+      const frac = amount - whole;
+      if (whole > 0 && fracs[frac.toFixed(2)]) return `${whole}${fracs[frac.toFixed(2)]}`;
+      return amount % 1 === 0 ? amount : amount;
+    }
+
+    /* ── State ── */
+    let allRecipes = [];
+    let activeSpirit = 'all';
+    let activeVibe   = 'all';
+    let barSpirits   = new Set();
+
+    /* ── Bar inventory filter ── */
+    const BAR_INGREDIENT_MAP = {
+      gin:     /\bgin\b/i,
+      rum:     /\brum\b/i,
+      whiskey: /\b(whiskey|whisky|bourbon|rye|irish whiskey)\b/i,
+      scotch:  /\bscotch\b|laphroaig/i,
+      tequila: /\btequila\b/i,
+      mezcal:  /\bmezcal\b/i,
+      vodka:   /\bvodka\b/i,
+      campari: /\bcampari\b/i,
+      aperol:  /\baperiol\b|\baperiol\b|\baperiol\b|^aperol$/i,
+    };
+
+    // Fix aperol regex
+    const APEROL_RE = /\baperiol\b|\baperiol\b|\baperiol\b|aperol/i;
+
+    function canMakeWithBar(recipe) {
+      if (barSpirits.size === 0) return true;
+      const names = recipe.ingredients.map(i => i.name).join('\n');
+      for (const spirit of barSpirits) {
+        let re;
+        if (spirit === 'aperol') re = /aperol/i;
+        else if (spirit === 'campari') re = /campari/i;
+        else re = BAR_INGREDIENT_MAP[spirit];
+        if (re && re.test(names)) return true;
+      }
+      return false;
+    }
+
+    /* ── Render ── */
     function render(recipes) {
+      const el = document.getElementById('recipes');
+
       if (recipes.length === 0) {
-        recipesEl.innerHTML = '<p class="empty">No recipes found.</p>';
+        el.innerHTML = `
+          <div class="empty">
+            <p class="empty-title">Nothing found.</p>
+            <p>Try a different search or fewer filters.</p>
+          </div>`;
         return;
       }
-      recipesEl.innerHTML = recipes.map(r => `
-        <div class="card">
-          <h2>${r.name}</h2>
-          <div class="meta">
-            <span>${r.vessel}</span>
-            <span>${r.served}</span>
-          </div>
-          <ul class="ingredients">
-            ${r.ingredients.map(i => `<li><strong>${formatAmount(i.amount)} ${i.unit}</strong> ${i.name}</li>`).join('')}
-          </ul>
-          ${r.garnish ? `<p class="garnish">Garnish: ${r.garnish}</p>` : ''}
-        </div>
-      `).join('');
+
+      el.innerHTML = recipes.map(r => {
+        const spirit = detectSpirit(r.ingredients);
+        const color  = spiritColor(spirit);
+        const tags   = (r.flavor_tags || []).slice(0, 3);
+        const shown  = r.ingredients.slice(0, 4);
+        const extra  = r.ingredients.length - shown.length;
+
+        return `
+          <a class="card" href="/recipe/${r.id}" style="--spirit-color:${color}">
+            <div class="card-strip"></div>
+            <div class="card-glass" style="color:${color}">${glasswaresVG(r.vessel)}</div>
+            <div class="card-body">
+              <h2 class="card-name">${r.name}</h2>
+              ${r.flavor_description
+                ? `<p class="card-desc">${r.flavor_description}</p>`
+                : ''}
+              ${tags.length
+                ? `<div class="card-tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+                : ''}
+              <ul class="card-ingredients">
+                ${shown.map(i => `
+                  <li>
+                    <span class="amt">${fmt(i.amount)}${i.unit ? ' ' + i.unit : ''}</span>
+                    ${i.name}
+                  </li>`).join('')}
+                ${extra > 0 ? `<li class="more">+${extra} more</li>` : ''}
+              </ul>
+              <div class="card-meta">
+                ${r.vessel ? `<span>${r.vessel}</span>` : ''}
+                ${r.served  ? `<span>${r.served}</span>`  : ''}
+              </div>
+            </div>
+          </a>`;
+      }).join('');
     }
 
+    /* ── Filter + apply ── */
+    function applyFilters() {
+      let results = allRecipes;
+
+      if (activeSpirit !== 'all') {
+        results = results.filter(r => detectSpirit(r.ingredients) === activeSpirit);
+      }
+
+      if (activeVibe !== 'all') {
+        results = results.filter(r => (r.flavor_tags || []).includes(activeVibe));
+      }
+
+      if (barSpirits.size > 0) {
+        results = results.filter(canMakeWithBar);
+      }
+
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      if (q) {
+        results = results.filter(r =>
+          r.name.toLowerCase().includes(q) ||
+          r.ingredients.some(i => i.name.toLowerCase().includes(q))
+        );
+      }
+
+      render(results);
+    }
+
+    /* ── Load ── */
+    async function loadRecipes() {
+      const res = await fetch('/api/recipes');
+      allRecipes = await res.json();
+      applyFilters();
+    }
+
+    /* ── Spirit filter chips ── */
+    document.getElementById('spirit-filters').addEventListener('click', e => {
+      const chip = e.target.closest('[data-spirit]');
+      if (!chip) return;
+      document.querySelectorAll('#spirit-filters .chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeSpirit = chip.dataset.spirit;
+      applyFilters();
+    });
+
+    /* ── Vibe filter chips ── */
+    document.getElementById('vibe-filters').addEventListener('click', e => {
+      const chip = e.target.closest('[data-vibe]');
+      if (!chip) return;
+      document.querySelectorAll('#vibe-filters .chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeVibe = chip.dataset.vibe;
+      applyFilters();
+    });
+
+    /* ── Search ── */
     let timer;
-    searchEl.addEventListener('input', () => {
+    document.getElementById('search').addEventListener('input', () => {
       clearTimeout(timer);
-      timer = setTimeout(() => loadRecipes(searchEl.value.trim()), 250);
+      timer = setTimeout(applyFilters, 200);
+    });
+
+    /* ── Bar toggle ── */
+    document.getElementById('bar-toggle').addEventListener('click', () => {
+      const btn   = document.getElementById('bar-toggle');
+      const panel = document.getElementById('bar-panel');
+      btn.classList.toggle('open');
+      panel.classList.toggle('visible');
+    });
+
+    /* ── Bar checkboxes ── */
+    document.querySelectorAll('.bar-spirits input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        if (cb.checked) barSpirits.add(cb.value);
+        else            barSpirits.delete(cb.value);
+        applyFilters();
+      });
     });
 
     loadRecipes();
