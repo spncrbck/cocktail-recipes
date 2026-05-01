@@ -1,0 +1,80 @@
+{
+  "recipes": [
+    {
+      "name": "Moscow Mule",
+      "ingredients": [
+        {"name": "vodka", "amount": 1.5, "unit": "oz"},
+        {"name": "ginger beer", "amount": 3, "unit": "oz"},
+        {"name": "lime juice", "amount": 0.5, "unit": "oz"}
+      ],
+      "garnish": "lime wedge",
+      "served": "over ice",
+      "vessel": "copper mug",
+      "tags": ["vodka", "refreshing", "highball"]
+    },
+    {
+      "name": "Gin and Tonic",
+      "ingredients": [
+        {"name": "gin", "amount": 1.5, "unit": "oz"},
+        {"name": "tonic water", "amount": 3, "unit": "oz"},
+        {"name": "lime juice", "amount": 0.5, "unit": "oz"}
+      ],
+      "garnish": "lime wedge",
+      "served": "over ice",
+      "vessel": "highball glass",
+      "tags": ["gin", "refreshing", "highball"]
+    },
+    {
+      "name": "Manhattan",
+      "ingredients": [
+        {"name": "rye whiskey", "amount": 2.5, "unit": "oz"},
+        {"name": "sweet vermouth", "amount": 0.75, "unit": "oz"},
+        {"name": "Angostura bitters", "amount": 2, "unit": "dash"}
+      ],
+      "garnish": "cherry",
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["whiskey", "rye", "stirred", "classic"]
+    },
+    {
+      "name": "French Oligarch",
+      "ingredients": [
+        {"name": "gin", "amount": 2, "unit": "oz"},
+        {"name": "lemon juice", "amount": 1, "unit": "oz"},
+        {"name": "simple syrup", "amount": 0.5, "unit": "oz"},
+        {"name": "St-Germain", "amount": 0.25, "unit": "oz"},
+        {"name": "fresh thyme", "amount": 4, "unit": "whole"}
+      ],
+      "garnish": "lemon twist",
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["gin", "floral", "herbal", "citrusy", "sour"]
+    },
+    {
+      "name": "My Last Word",
+      "ingredients": [
+        {"name": "gin", "amount": 2, "unit": "oz"},
+        {"name": "klosterbitter liqueur", "amount": 1, "unit": "oz"},
+        {"name": "lime juice", "amount": 1, "unit": "oz"},
+        {"name": "maraschino liqueur", "amount": 0.25, "unit": "oz"}
+      ],
+      "garnish": null,
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["gin", "classic", "stirred", "citrusy", "herbal", "bitter"]
+    },
+    {
+      "name": "Nutty Russian",
+      "ingredients": [
+        {"name": "vodka", "amount": 2, "unit": "oz"},
+        {"name": "Amaretto", "amount": 1, "unit": "oz"},
+        {"name": "Kahlúa", "amount": 0.5, "unit": "oz"},
+        {"name": "cocoa bitters", "amount": 3, "unit": "dash"}
+      ],
+      "garnish": null,
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["vodka", "sweet", "rich", "creamy"]
+    }
+  ]
+}
