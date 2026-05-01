@@ -53,7 +53,8 @@ Tags are used for filtering and discovery. Apply all that fit:
 ## Common Tasks
 
 ### Add a recipe
-Append a new entry to the `recipes` array in `data/recipes.json`, following the schema above. Use existing recipes as reference for formatting.
+1. Check each ingredient against the canonical list below. If any ingredient is missing, add it to the appropriate category first.
+2. Append a new entry to the `recipes` array in `data/recipes.json`, using canonical ingredient names exactly as they appear in the list.
 
 ### Search by ingredient
 Read `data/recipes.json` and filter recipes whose `ingredients` array contains a matching `name`.
@@ -77,3 +78,180 @@ Find all recipes whose `tags` array includes the specified tag.
 - Prefer `oz` over other units when possible for consistency
 - When a recipe has no garnish, set `"garnish": null`
 - The `recipes` array is not sorted — new recipes are appended
+- **Always use canonical ingredient names** (see list below). If a recipe calls for something not on the list, add it to the appropriate category before adding the recipe.
+
+## Canonical Ingredients
+
+When adding recipes, ingredient `name` values must match this list exactly. This ensures consistent search and filtering.
+
+### Spirits
+
+**Vodka**
+- `vodka`
+
+**Gin**
+- `gin`
+- `sloe gin`
+
+**Rum**
+- `white rum`
+- `dark rum`
+- `aged rum`
+- `overproof rum`
+- `spiced rum`
+- `cachaça`
+
+**Tequila & Mezcal**
+- `blanco tequila`
+- `reposado tequila`
+- `añejo tequila`
+- `mezcal`
+
+**Whiskey**
+- `bourbon`
+- `rye whiskey`
+- `scotch whisky`
+- `Irish whiskey`
+- `Japanese whisky`
+
+**Brandy**
+- `brandy`
+- `cognac`
+- `calvados`
+- `pisco`
+- `Armagnac`
+
+**Other Spirits**
+- `absinthe`
+- `aquavit`
+- `grappa`
+
+### Liqueurs & Modifiers
+
+**Orange**
+- `triple sec`
+- `Cointreau`
+- `Grand Marnier`
+- `curaçao`
+
+**Bitter & Aperitivo**
+- `Campari`
+- `Aperol`
+- `Cynar`
+- `Fernet-Branca`
+- `Amaro Nonino`
+- `Amaro Montenegro`
+
+**Vermouth & Aromatized Wine**
+- `sweet vermouth`
+- `dry vermouth`
+- `bianco vermouth`
+- `Lillet Blanc`
+- `Cocchi Americano`
+- `Cocchi di Torino`
+
+**Herbal & Floral**
+- `green Chartreuse`
+- `yellow Chartreuse`
+- `Bénédictine`
+- `Drambuie`
+- `St-Germain`
+- `elderflower liqueur`
+
+**Cherry & Nut**
+- `maraschino liqueur`
+- `Amaretto`
+- `Frangelico`
+
+**Coffee & Chocolate**
+- `Kahlúa`
+- `coffee liqueur`
+- `dark crème de cacao`
+- `white crème de cacao`
+
+**Cream**
+- `Irish cream liqueur`
+
+**Other Liqueurs**
+- `green crème de menthe`
+- `white crème de menthe`
+- `crème de violette`
+- `crème de cassis`
+- `Midori`
+- `falernum`
+- `Licor 43`
+
+### Bitters
+
+- `Angostura bitters`
+- `Peychaud's bitters`
+- `orange bitters`
+- `mole bitters`
+- `celery bitters`
+- `grapefruit bitters`
+
+### Juices
+
+- `lime juice`
+- `lemon juice`
+- `orange juice`
+- `grapefruit juice`
+- `pineapple juice`
+- `cranberry juice`
+- `apple juice`
+- `pomegranate juice`
+- `passion fruit juice`
+- `tomato juice`
+
+### Syrups & Sweeteners
+
+- `simple syrup`
+- `rich simple syrup`
+- `demerara syrup`
+- `honey syrup`
+- `agave syrup`
+- `grenadine`
+- `orgeat`
+- `passion fruit syrup`
+- `raspberry syrup`
+- `cinnamon syrup`
+- `ginger syrup`
+
+### Mixers & Sodas
+
+- `ginger beer`
+- `ginger ale`
+- `tonic water`
+- `club soda`
+- `sparkling water`
+- `cola`
+- `lemon-lime soda`
+- `Champagne`
+- `prosecco`
+- `dry sparkling wine`
+
+### Dairy & Eggs
+
+- `heavy cream`
+- `whole milk`
+- `coconut cream`
+- `coconut milk`
+- `egg white`
+- `whole egg`
+
+### Fresh & Produce
+
+- `fresh mint`
+- `fresh basil`
+- `fresh ginger`
+- `cucumber`
+- `jalapeño`
+- `muddled lime`
+- `muddled lemon`
+
+### Salty & Savory
+
+- `olive brine`
+- `hot sauce`
+- `Worcestershire sauce`
+- `horseradish`
