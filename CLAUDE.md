@@ -22,6 +22,17 @@ through the UI. All recipe changes are made by editing `recipes.json` and pushin
 to master. Do not implement write functionality (forms, API POST/DELETE routes,
 etc.) unless explicitly asked.
 
+## Ingredient Ordering Convention
+
+When adding or editing recipes, always list ingredients in this order:
+
+1. **Liquor** (base spirits: gin, rum, vodka, whiskey, bourbon, rye, scotch, tequila, mezcal) — most to least by amount
+2. **Liqueurs & modifiers** (Aperol, Campari, vermouth, triple sec, maraschino, elderflower, syrups, grenadine, etc.) — most to least by amount; spirit-based liqueurs before syrups when amounts are equal
+3. **Juice & mixers** (citrus juice, pineapple juice, tonic, ginger beer, soda, Coca-Cola, etc.) — most to least by amount
+4. **Dashes** (bitters, Tajín, etc.) — most to least by count
+
+Special ingredients (egg white, muddled herbs, fruit) go at the end of whichever category they fit, or after dashes if they don't fit any.
+
 ## Adding or Editing Recipes
 
 `recipes.json` is the source of truth for all recipe data. The SQLite database

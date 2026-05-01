@@ -223,6 +223,8 @@
       updateScale();
     });
 
+    updateScale();
+
     document.getElementById('theme-toggle').addEventListener('click', () => {
       const isLight = document.documentElement.dataset.theme === 'light';
       const next = isLight ? 'dark' : 'light';
