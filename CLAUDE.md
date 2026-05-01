@@ -32,6 +32,8 @@ be lost on the next restart.
 To add or edit a recipe: update `recipes.json`, commit, and push to `master`.
 Render will auto-deploy within a minute or two and the change will be live.
 
+**⚠️ IMPORTANT FOR CLAUDE: Recipe additions and edits (`recipes.json` only) always push directly to `master`, never to a feature branch.** Use `git push origin HEAD:master` to push to master from any branch.
+
 ## Branch Strategy
 
 Push directly to `master` for recipe additions and small changes. Use a feature
