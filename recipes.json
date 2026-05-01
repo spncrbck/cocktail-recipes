@@ -196,15 +196,20 @@
   },
   {
     "name": "Left Hand",
-    "garnish": "",
+    "garnish": "brandied cherry",
     "served": "stirred, up",
     "vessel": "coupe",
     "flavor_tags": ["bitter", "boozy", "rich"],
-    "flavor_description": "A Negroni-Manhattan love child — stirred, complex, and brooding.",
-    "ingredients": [],
-    "attribution": "IG @robbreport",
+    "flavor_description": "A spirit-forward, chocolate-tinged Bourbon boulevardier — stirred, complex, and brooding.",
+    "ingredients": [
+      { "name": "bourbon", "amount": 1.5, "unit": "oz" },
+      { "name": "Campari", "amount": 0.75, "unit": "oz" },
+      { "name": "sweet vermouth", "amount": 0.75, "unit": "oz" },
+      { "name": "chocolate bitters", "amount": 2.5, "unit": "dash" }
+    ],
+    "attribution": "Sam Ross, 2005",
     "special_tags": [],
-    "notes": "Recipe not visible in captured post — only the title card shown ('How to Make a Left Hand, the Love Child of a Negroni and a Manhattan'). No ingredients parseable from this image."
+    "notes": "A Bourbon-based Boulevardier variation. Stirred with ice. Prefer Carpano Antica for the vermouth and Bittermen's Xocolatl Mole for the chocolate bitters."
   },
   {
     "name": "Fridge Cigarette",
