@@ -141,6 +141,7 @@ When adding recipes, ingredient `name` values must match this list exactly. This
 - `Fernet-Branca`
 - `Amaro Nonino`
 - `Amaro Montenegro`
+- `klosterbitter liqueur`
 
 **Vermouth & Aromatized Wine**
 - `sweet vermouth`
@@ -189,6 +190,7 @@ When adding recipes, ingredient `name` values must match this list exactly. This
 - `mole bitters`
 - `celery bitters`
 - `grapefruit bitters`
+- `cocoa bitters`
 
 ### Juices
 
@@ -243,6 +245,7 @@ When adding recipes, ingredient `name` values must match this list exactly. This
 
 - `fresh mint`
 - `fresh basil`
+- `fresh thyme`
 - `fresh ginger`
 - `cucumber`
 - `jalapeño`

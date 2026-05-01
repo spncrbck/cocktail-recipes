@@ -35,6 +35,46 @@
       "served": "up",
       "vessel": "coupe",
       "tags": ["whiskey", "rye", "stirred", "classic"]
+    },
+    {
+      "name": "French Oligarch",
+      "ingredients": [
+        {"name": "gin", "amount": 2, "unit": "oz"},
+        {"name": "lemon juice", "amount": 1, "unit": "oz"},
+        {"name": "simple syrup", "amount": 0.5, "unit": "oz"},
+        {"name": "St-Germain", "amount": 0.25, "unit": "oz"},
+        {"name": "fresh thyme", "amount": 4, "unit": "whole"}
+      ],
+      "garnish": "lemon twist",
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["gin", "floral", "herbal", "citrusy", "sour"]
+    },
+    {
+      "name": "My Last Word",
+      "ingredients": [
+        {"name": "gin", "amount": 2, "unit": "oz"},
+        {"name": "klosterbitter liqueur", "amount": 1, "unit": "oz"},
+        {"name": "lime juice", "amount": 1, "unit": "oz"},
+        {"name": "maraschino liqueur", "amount": 0.25, "unit": "oz"}
+      ],
+      "garnish": null,
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["gin", "classic", "stirred", "citrusy", "herbal", "bitter"]
+    },
+    {
+      "name": "Nutty Russian",
+      "ingredients": [
+        {"name": "vodka", "amount": 2, "unit": "oz"},
+        {"name": "Amaretto", "amount": 1, "unit": "oz"},
+        {"name": "Kahlúa", "amount": 0.5, "unit": "oz"},
+        {"name": "cocoa bitters", "amount": 3, "unit": "dash"}
+      ],
+      "garnish": null,
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["vodka", "sweet", "rich", "creamy"]
     }
   ]
 }
