@@ -50,36 +50,35 @@ def close_db(_):
 
 
 def init_db():
-    with app.app_context():
-        db = get_db()
-        db.executescript("""
-            CREATE TABLE IF NOT EXISTS recipes (
-                id      INTEGER PRIMARY KEY AUTOINCREMENT,
-                name    TEXT NOT NULL,
-                garnish TEXT,
-                served  TEXT,
-                vessel  TEXT
-            );
-            CREATE TABLE IF NOT EXISTS ingredients (
-                id        INTEGER PRIMARY KEY AUTOINCREMENT,
-                recipe_id INTEGER REFERENCES recipes(id),
-                name      TEXT NOT NULL,
-                amount    REAL,
-                unit      TEXT
-            );
-        """)
-        if db.execute("SELECT COUNT(*) FROM recipes").fetchone()[0] == 0:
-            for drink in SEED_RECIPES:
-                cur = db.execute(
-                    "INSERT INTO recipes (name, garnish, served, vessel) VALUES (?, ?, ?, ?)",
-                    (drink["name"], drink["garnish"], drink["served"], drink["vessel"]),
+    db = get_db()
+    db.executescript("""
+        CREATE TABLE IF NOT EXISTS recipes (
+            id      INTEGER PRIMARY KEY AUTOINCREMENT,
+            name    TEXT NOT NULL,
+            garnish TEXT,
+            served  TEXT,
+            vessel  TEXT
+        );
+        CREATE TABLE IF NOT EXISTS ingredients (
+            id        INTEGER PRIMARY KEY AUTOINCREMENT,
+            recipe_id INTEGER REFERENCES recipes(id),
+            name      TEXT NOT NULL,
+            amount    REAL,
+            unit      TEXT
+        );
+    """)
+    if db.execute("SELECT COUNT(*) FROM recipes").fetchone()[0] == 0:
+        for drink in SEED_RECIPES:
+            cur = db.execute(
+                "INSERT INTO recipes (name, garnish, served, vessel) VALUES (?, ?, ?, ?)",
+                (drink["name"], drink["garnish"], drink["served"], drink["vessel"]),
+            )
+            for name, amount, unit in drink["ingredients"]:
+                db.execute(
+                    "INSERT INTO ingredients (recipe_id, name, amount, unit) VALUES (?, ?, ?, ?)",
+                    (cur.lastrowid, name, amount, unit),
                 )
-                for name, amount, unit in drink["ingredients"]:
-                    db.execute(
-                        "INSERT INTO ingredients (recipe_id, name, amount, unit) VALUES (?, ?, ?, ?)",
-                        (cur.lastrowid, name, amount, unit),
-                    )
-            db.commit()
+        db.commit()
 
 
 def recipe_row_to_dict(row, db):
@@ -124,6 +123,8 @@ def list_recipes():
     return jsonify([recipe_row_to_dict(row, db) for row in rows])
 
 
-if __name__ == "__main__":
+with app.app_context():
     init_db()
+
+if __name__ == "__main__":
     app.run(debug=True)
