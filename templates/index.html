@@ -195,7 +195,7 @@
     /* ── State ── */
     let allRecipes = [];
     let activeSpirit = 'all';
-    let activeVibe   = 'all';
+    let activeVibes  = new Set();
     let barSpirits   = new Set();
 
     /* ── Bar inventory filter ── */
@@ -284,8 +284,10 @@
         results = results.filter(r => detectSpirit(r.ingredients) === activeSpirit);
       }
 
-      if (activeVibe !== 'all') {
-        results = results.filter(r => (r.flavor_tags || []).includes(activeVibe));
+      if (activeVibes.size > 0) {
+        results = results.filter(r =>
+          [...activeVibes].every(v => (r.flavor_tags || []).includes(v))
+        );
       }
 
       if (barSpirits.size > 0) {
@@ -320,13 +322,28 @@
       applyFilters();
     });
 
-    /* ── Vibe filter chips ── */
+    /* ── Vibe filter chips (multi-select, AND logic) ── */
     document.getElementById('vibe-filters').addEventListener('click', e => {
       const chip = e.target.closest('[data-vibe]');
       if (!chip) return;
-      document.querySelectorAll('#vibe-filters .chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeVibe = chip.dataset.vibe;
+      const vibe = chip.dataset.vibe;
+      if (vibe === 'all') {
+        activeVibes.clear();
+        document.querySelectorAll('#vibe-filters .chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      } else {
+        document.querySelector('#vibe-filters [data-vibe="all"]').classList.remove('active');
+        if (activeVibes.has(vibe)) {
+          activeVibes.delete(vibe);
+          chip.classList.remove('active');
+          if (activeVibes.size === 0) {
+            document.querySelector('#vibe-filters [data-vibe="all"]').classList.add('active');
+          }
+        } else {
+          activeVibes.add(vibe);
+          chip.classList.add('active');
+        }
+      }
       applyFilters();
     });
 
