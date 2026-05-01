@@ -10,7 +10,7 @@ web app replaces that with a proper persistent store and browser-based UI.
 
 ## Live App
 
-**URL**: https://cocktail-recipes-pr3g.onrender.com
+**URL**: https://muddled.onrender.com
 **Host**: Render (free tier web service)
 
 Auto-deploys when commits are pushed to `master`. There is no manual deploy step.
