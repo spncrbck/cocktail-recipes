@@ -89,7 +89,7 @@ body {
 .title-word {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -223,17 +223,17 @@ body {
 }
 
 .chip.active {
-  background: var(--surface-2);
-  color: var(--text);
-  border-color: #444;
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
 }
 
 /* Spirit chips use their respective colors when active */
-.chip[data-spirit="gin"].active    { border-color: var(--gin);     color: var(--gin); }
-.chip[data-spirit="rum"].active    { border-color: var(--rum);     color: var(--rum); }
-.chip[data-spirit="whiskey"].active{ border-color: var(--whiskey); color: var(--whiskey); }
-.chip[data-spirit="tequila"].active{ border-color: var(--tequila); color: var(--tequila); }
-.chip[data-spirit="vodka"].active  { border-color: var(--vodka);   color: var(--vodka); }
+.chip[data-spirit="gin"].active    { background: var(--gin);     border-color: var(--gin);     color: var(--bg); }
+.chip[data-spirit="rum"].active    { background: var(--rum);     border-color: var(--rum);     color: var(--bg); }
+.chip[data-spirit="whiskey"].active{ background: var(--whiskey); border-color: var(--whiskey); color: var(--bg); }
+.chip[data-spirit="tequila"].active{ background: var(--tequila); border-color: var(--tequila); color: var(--bg); }
+.chip[data-spirit="vodka"].active  { background: var(--vodka);   border-color: var(--vodka);   color: var(--bg); }
 
 /* ── Bar inventory collapsible ── */
 .bar-section {
@@ -245,20 +245,22 @@ body {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.7rem 0;
+  padding: 0.75rem 0;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text-muted);
+  color: var(--text);
   font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 600;
   width: 100%;
   text-align: left;
   transition: color 0.15s;
 }
 
-.bar-toggle:hover { color: var(--text); }
+.bar-toggle .bar-icon { color: var(--gold); }
+
+.bar-toggle:hover { color: var(--gold); }
 
 .bar-toggle svg {
   transition: transform 0.2s;
@@ -322,7 +324,7 @@ main { padding: 2rem; }
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 4px;
   background: var(--spirit-color, var(--other));
 }
 
@@ -351,11 +353,11 @@ main { padding: 2rem; }
 
 .card-name {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.1;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .card-desc {
@@ -411,13 +413,13 @@ main { padding: 2rem; }
 }
 
 .card-ingredients li {
-  font-size: 0.83rem;
-  color: var(--text-muted);
+  font-size: 0.78rem;
+  color: var(--text-dim);
 }
 
 .card-ingredients li .amt {
-  color: var(--text);
-  font-weight: 500;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .card-ingredients .more {
