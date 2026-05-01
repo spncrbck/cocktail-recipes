@@ -27,16 +27,19 @@ def init_db():
     db = get_db()
     db.executescript("""
         CREATE TABLE IF NOT EXISTS recipes (
-            id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            name    TEXT NOT NULL,
-            garnish TEXT,
-            served  TEXT,
-            vessel  TEXT
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            name         TEXT NOT NULL,
+            served       TEXT,
+            glass        TEXT,
+            garnish      TEXT,
+            attribution  TEXT,
+            special_tags TEXT,
+            notes        TEXT
         );
         CREATE TABLE IF NOT EXISTS ingredients (
             id        INTEGER PRIMARY KEY AUTOINCREMENT,
             recipe_id INTEGER REFERENCES recipes(id),
-            name      TEXT NOT NULL,
+            item      TEXT NOT NULL,
             amount    REAL,
             unit      TEXT
         );
@@ -46,30 +49,42 @@ def init_db():
             seed = json.load(f)
         for drink in seed:
             cur = db.execute(
-                "INSERT INTO recipes (name, garnish, served, vessel) VALUES (?, ?, ?, ?)",
-                (drink["name"], drink["garnish"], drink["served"], drink["vessel"]),
+                """INSERT INTO recipes (name, served, glass, garnish, attribution, special_tags, notes)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    drink["name"],
+                    drink.get("served", ""),
+                    drink.get("glass", ""),
+                    json.dumps(drink.get("garnish", [])),
+                    drink.get("attribution", ""),
+                    json.dumps(drink.get("special_tags", [])),
+                    drink.get("notes", ""),
+                ),
             )
             for ing in drink["ingredients"]:
                 db.execute(
-                    "INSERT INTO ingredients (recipe_id, name, amount, unit) VALUES (?, ?, ?, ?)",
-                    (cur.lastrowid, ing["name"], ing["amount"], ing["unit"]),
+                    "INSERT INTO ingredients (recipe_id, item, amount, unit) VALUES (?, ?, ?, ?)",
+                    (cur.lastrowid, ing["item"], ing["amount"], ing["unit"]),
                 )
         db.commit()
 
 
 def recipe_row_to_dict(row, db):
     ingredients = db.execute(
-        "SELECT name, amount, unit FROM ingredients WHERE recipe_id = ? ORDER BY id",
+        "SELECT item, amount, unit FROM ingredients WHERE recipe_id = ? ORDER BY id",
         (row["id"],),
     ).fetchall()
     return {
         "id": row["id"],
         "name": row["name"],
-        "garnish": row["garnish"],
         "served": row["served"],
-        "vessel": row["vessel"],
+        "glass": row["glass"],
+        "garnish": json.loads(row["garnish"] or "[]"),
+        "attribution": row["attribution"],
+        "special_tags": json.loads(row["special_tags"] or "[]"),
+        "notes": row["notes"],
         "ingredients": [
-            {"name": i["name"], "amount": i["amount"], "unit": i["unit"]} for i in ingredients
+            {"item": i["item"], "amount": i["amount"], "unit": i["unit"]} for i in ingredients
         ],
     }
 
@@ -86,16 +101,19 @@ def list_recipes():
     if q:
         rows = db.execute(
             """
-            SELECT DISTINCT r.id, r.name, r.garnish, r.served, r.vessel
+            SELECT DISTINCT r.id, r.name, r.served, r.glass, r.garnish,
+                            r.attribution, r.special_tags, r.notes
             FROM recipes r
             LEFT JOIN ingredients i ON i.recipe_id = r.id
-            WHERE r.name LIKE ? OR i.name LIKE ?
+            WHERE r.name LIKE ? OR i.item LIKE ?
             ORDER BY r.name
             """,
             (f"%{q}%", f"%{q}%"),
         ).fetchall()
     else:
-        rows = db.execute("SELECT * FROM recipes ORDER BY name").fetchall()
+        rows = db.execute(
+            "SELECT id, name, served, glass, garnish, attribution, special_tags, notes FROM recipes ORDER BY name"
+        ).fetchall()
     return jsonify([recipe_row_to_dict(row, db) for row in rows])
 
 

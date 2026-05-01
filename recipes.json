@@ -1,35 +1,44 @@
 [
   {
     "name": "Moscow Mule",
-    "garnish": "lime wedge",
-    "served": "over ice",
-    "vessel": "copper mug",
     "ingredients": [
-      { "name": "vodka",       "amount": 2,   "unit": "oz" },
-      { "name": "ginger beer", "amount": 4,   "unit": "oz" },
-      { "name": "lime juice",  "amount": 0.5, "unit": "oz" }
-    ]
+      { "amount": 2,   "unit": "oz", "item": "vodka" },
+      { "amount": 4,   "unit": "oz", "item": "ginger beer" },
+      { "amount": 0.5, "unit": "oz", "item": "lime juice" }
+    ],
+    "served": "built, on the rocks",
+    "glass": "mule mug",
+    "garnish": ["lime wedge"],
+    "attribution": "",
+    "special_tags": [],
+    "notes": ""
   },
   {
     "name": "Gin and Tonic",
-    "garnish": "lime wedge",
-    "served": "over ice",
-    "vessel": "highball glass",
     "ingredients": [
-      { "name": "gin",         "amount": 2,   "unit": "oz" },
-      { "name": "tonic water", "amount": 4,   "unit": "oz" },
-      { "name": "lime juice",  "amount": 0.5, "unit": "oz" }
-    ]
+      { "amount": 2,   "unit": "oz", "item": "gin" },
+      { "amount": 4,   "unit": "oz", "item": "tonic water" },
+      { "amount": 0.5, "unit": "oz", "item": "lime juice" }
+    ],
+    "served": "built, on the rocks",
+    "glass": "highball",
+    "garnish": ["lime wedge"],
+    "attribution": "",
+    "special_tags": [],
+    "notes": ""
   },
   {
     "name": "Manhattan",
-    "garnish": "cherry",
-    "served": "neat",
-    "vessel": "coupe",
     "ingredients": [
-      { "name": "rye whiskey",      "amount": 2, "unit": "oz"   },
-      { "name": "sweet vermouth",   "amount": 1, "unit": "oz"   },
-      { "name": "angostura bitters","amount": 2, "unit": "dash" }
-    ]
+      { "amount": 2, "unit": "oz",   "item": "rye whiskey" },
+      { "amount": 1, "unit": "oz",   "item": "sweet vermouth" },
+      { "amount": 2, "unit": "dash", "item": "Angostura bitters" }
+    ],
+    "served": "stirred, up",
+    "glass": "coupe",
+    "garnish": ["cherry"],
+    "attribution": "",
+    "special_tags": [],
+    "notes": ""
   }
 ]

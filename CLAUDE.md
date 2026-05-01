@@ -44,15 +44,53 @@ changes that affect app behavior or appearance.
 - **Database**: SQLite (`recipes.db`, auto-created on first run, ephemeral on Render)
 - **Frontend**: Vanilla HTML / CSS / JavaScript (no framework)
 
-## Data Schema
+## Recipe JSON Schema
+
+`recipes.json` is the source of truth. Each recipe object must have all of these keys:
+
+```json
+{
+  "name": "Title Case string",
+  "ingredients": [{ "amount": 1.5, "unit": "oz", "item": "ingredient name" }],
+  "served": "string",
+  "glass": "string",
+  "garnish": ["string"],
+  "attribution": "string",
+  "special_tags": ["string"],
+  "notes": "string"
+}
+```
+
+### Field rules
+
+- **name** — Title-case. Infer if unclear.
+- **ingredients.amount** — Always a decimal: `1.5`, `0.75`, `0.5`. For barspoon / splash / dash / rinse use `1`.
+- **ingredients.unit** — `oz`, `dash`, `splash`, `barspoon`, `rinse`, `drop`, or `""`. Convert volume to oz where possible.
+- **ingredients.item** — Clean and generic: `"lemon juice"` not `"fresh-squeezed lemon juice"`. Drop brand when it's just a common style (Bombay → `"gin"`, Bacardi → `"white rum"`). Keep brand when it defines the ingredient: `"Lillet Blanc"`, `"Aperol"`, `"Campari"`, `"Fernet-Branca"`, `"Velvet Falernum"`.
+- **served** — `neat` / `on the rocks` / `up` / `built` / `shaken` / `stirred` / `blended` / `shot`. Chain if needed: `"shaken, up"`. Infer from drink style if unstated (sours → `"shaken, up"`, highballs → `"built, on the rocks"`, spirit-forward → `"stirred, up"`).
+- **glass** — lowercase: `highball`, `rocks`, `martini`, `coupe`, `nick & nora`, `collins`, `flute`, `mule mug`, `snifter`, `hurricane`, `wine`, `pint`, `shot`, `tiki`, `unknown`.
+- **garnish** — array, `[]` if none. Garnish = placed on top/rim, not mixed in.
+- **attribution** — exact source string or `""`. Instagram format: `"IG @username"`.
+- **special_tags** — array of short tag strings. Reserved: `"inferred"` (any amounts were guessed). Others as appropriate: `"spicy"`, `"low-abv"`, `"frozen"`, `"brunch"`, etc.
+- **notes** — only if critical (rimming instructions, layering order, specific ice type); else `""`.
+
+Unknown or missing fields → `""` or `[]`. Never omit a key.
+
+### Parsing conventions (when adding recipes from photos or menus)
+
+- Visible text beats visual inference — infer intelligently when content is cut off or incomplete.
+- Merge duplicate ingredients by summing amounts.
+- If amounts are missing (e.g. restaurant menu photo), make reasonable professional guesses and add `"inferred"` to `special_tags`.
+- Multiple recipes in one input → all go into one JSON array.
+
+## Database Schema
+
+The SQLite DB is rebuilt from `recipes.json` on every start. Never edit it directly.
 
 ```
-recipes:     id, name, garnish, served, vessel
-ingredients: id, recipe_id, name, amount, unit
+recipes:     id, name, served, glass, garnish (JSON array), attribution, special_tags (JSON array), notes
+ingredients: id, recipe_id, item, amount, unit
 ```
-
-Ingredients use a flat row-per-ingredient model (name, amount, unit) rather than
-the original parallel-array approach, making queries straightforward.
 
 ## Running Locally
 
@@ -66,7 +104,7 @@ python app.py
 
 - Browse all recipes as cards
 - Live search by recipe name or ingredient name
-- Ingredient list, garnish, serving style, and vessel shown per card
+- Ingredient list, garnish, serving style, and glass shown per card
 
 ## Planned Features
 
@@ -74,6 +112,6 @@ python app.py
 - **"Missing one ingredient" suggestions** — show near-matches with one ingredient missing
 - **Random drink picker** — shake button that surfaces a random recipe
 - **Filter by spirit** — narrow by base spirit (vodka, gin, whiskey, rum, etc.)
-- **Filter by vessel / serving style** — e.g., show only "neat" drinks or highball drinks
+- **Filter by glass / serving style** — e.g., show only "stirred, up" drinks or highball drinks
 - **Ingredient substitution hints** — e.g., "can use lemon juice instead of lime juice"
 - **Print / export** — printable recipe card layout

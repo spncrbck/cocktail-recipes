@@ -46,13 +46,14 @@
         <div class="card">
           <h2>${r.name}</h2>
           <div class="meta">
-            <span>${r.vessel}</span>
+            <span>${r.glass}</span>
             <span>${r.served}</span>
           </div>
           <ul class="ingredients">
-            ${r.ingredients.map(i => `<li><strong>${formatAmount(i.amount)} ${i.unit}</strong> ${i.name}</li>`).join('')}
+            ${r.ingredients.map(i => `<li><strong>${formatAmount(i.amount)} ${i.unit}</strong> ${i.item}</li>`).join('')}
           </ul>
-          ${r.garnish ? `<p class="garnish">Garnish: ${r.garnish}</p>` : ''}
+          ${r.garnish && r.garnish.length ? `<p class="garnish">Garnish: ${r.garnish.join(', ')}</p>` : ''}
+          ${r.notes ? `<p class="notes">${r.notes}</p>` : ''}
         </div>
       `).join('');
     }
