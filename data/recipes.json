@@ -1,0 +1,40 @@
+{
+  "recipes": [
+    {
+      "name": "Moscow Mule",
+      "ingredients": [
+        {"name": "vodka", "amount": 1.5, "unit": "oz"},
+        {"name": "ginger beer", "amount": 3, "unit": "oz"},
+        {"name": "lime juice", "amount": 0.5, "unit": "oz"}
+      ],
+      "garnish": "lime wedge",
+      "served": "over ice",
+      "vessel": "copper mug",
+      "tags": ["vodka", "refreshing", "highball"]
+    },
+    {
+      "name": "Gin and Tonic",
+      "ingredients": [
+        {"name": "gin", "amount": 1.5, "unit": "oz"},
+        {"name": "tonic water", "amount": 3, "unit": "oz"},
+        {"name": "lime juice", "amount": 0.5, "unit": "oz"}
+      ],
+      "garnish": "lime wedge",
+      "served": "over ice",
+      "vessel": "highball glass",
+      "tags": ["gin", "refreshing", "highball"]
+    },
+    {
+      "name": "Manhattan",
+      "ingredients": [
+        {"name": "rye whiskey", "amount": 2.5, "unit": "oz"},
+        {"name": "sweet vermouth", "amount": 0.75, "unit": "oz"},
+        {"name": "Angostura bitters", "amount": 2, "unit": "dash"}
+      ],
+      "garnish": "cherry",
+      "served": "up",
+      "vessel": "coupe",
+      "tags": ["whiskey", "rye", "stirred", "classic"]
+    }
+  ]
+}

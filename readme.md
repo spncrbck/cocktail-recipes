@@ -1,28 +1,22 @@
-# The Cocktail Recipe Database Project
+# Cocktail Recipe Database
 
-I am building a simple database for a non-GUI cocktail book.
+An AI-first cocktail database and assistant bartender, powered by Claude Code.
 
-### Features Wishlist
+There is no application code — Claude Code is the interface. Recipes are stored in `data/recipes.json` and Claude Code can add, search, filter, and suggest recipes in natural language.
 
-* Stores drink name, ingredients and their amounts (with units of measurement), garnish, serving style, and drink vessel used.
-* Allows user to search for recipes based on one or more ingredients; returns as a list with the drink name and ingredients (nothing more).
-* User inputs drink name and recipe is returned as described in first bullet above.
-* User can add drink recipes.
-* User can add their own ingredients to a "bar" and sort for drinks they can make with said ingredients.
-* Drink output can be randomized to give the user a "surprise" recipe.
+### What you can ask
 
-### Resources Used
+- "Add a recipe for a Negroni"
+- "What can I make with gin, lemon juice, and simple syrup?"
+- "Show me all stirred whiskey cocktails"
+- "Give me a random cocktail"
+- "Look up the Manhattan recipe"
 
-* [Udemy](https://www.udemy.com/) - Free and affordable online courses
-* [Repl.it](https://repl.it/) - Online REPL, Compiler, and IDE, as well as 'graded' courses
-* [Data Science from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X/ref=sr_1_2?keywords=data+science+from+scratch&qid=1554394274&s=gateway&sr=8-2m) - Joel Grus
-* [Python Crash Course](https://www.amazon.com/dp/1593276036/ref=olp_product_details?_encoding=UTF8&me=) - Eric Matthes
-* [Learning Python](https://www.amazon.com/dp/1449355730/ref=olp_product_details?_encoding=UTF8&me=) - Mark Lutz
-* [Learn Python 3 the Hard Way](https://www.amazon.com/dp/0134692888/ref=olp_product_details?_encoding=UTF8&me=) - Zed A. Shaw
-* [Python Cookbook](https://www.amazon.com/dp/1449340377/ref=olp_product_details?_encoding=UTF8&me=) - David Beazley and Brian K. Jones
-* [Python for Data Analysis](https://www.amazon.com/dp/1491957662/ref=olp_product_details?_encoding=UTF8&me=) - Wes McKinney
-* [Mining the Social Web](https://www.amazon.com/dp/1449367615/ref=olp_product_details?_encoding=UTF8&me=) - Matthew A. Russell
+See `CLAUDE.md` for the full schema and conventions.
 
-### Development Environment
+### Features
 
-All pushed development is done via [Microsoft Visual Studio Code](https://code.visualstudio.com/) on W10 with GitHub integration. I also use a [Jupyter notebook](https://jupyter.org/) and [Repl.it](https://repl.it/) to test code.
+- Stores drink name, ingredients with amounts and units, garnish, serving style, and vessel
+- Search by ingredient, name, tag, or serving style
+- Filter by available bar ingredients
+- Randomize for a surprise recipe
