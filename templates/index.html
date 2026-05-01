@@ -84,17 +84,17 @@
         </svg>
       </button>
       <div class="bar-panel" id="bar-panel">
-        <p class="bar-intro">Check what you have — only see drinks you can make.</p>
-        <div class="bar-spirits">
-          <label><input type="checkbox" value="gin"> Gin</label>
-          <label><input type="checkbox" value="rum"> Rum</label>
-          <label><input type="checkbox" value="whiskey"> Whiskey / Bourbon / Rye</label>
-          <label><input type="checkbox" value="scotch"> Scotch</label>
-          <label><input type="checkbox" value="tequila"> Tequila</label>
-          <label><input type="checkbox" value="mezcal"> Mezcal</label>
-          <label><input type="checkbox" value="vodka"> Vodka</label>
-          <label><input type="checkbox" value="campari"> Campari</label>
-          <label><input type="checkbox" value="aperol"> Aperol</label>
+        <p class="bar-intro">Select what you have — only see drinks you can make.</p>
+        <div class="bar-spirits" id="bar-spirits">
+          <button class="chip" data-bar-spirit="gin">Gin</button>
+          <button class="chip" data-bar-spirit="rum">Rum</button>
+          <button class="chip" data-bar-spirit="whiskey">Whiskey</button>
+          <button class="chip" data-bar-spirit="scotch">Scotch</button>
+          <button class="chip" data-bar-spirit="tequila">Tequila</button>
+          <button class="chip" data-bar-spirit="mezcal">Mezcal</button>
+          <button class="chip" data-bar-spirit="vodka">Vodka</button>
+          <button class="chip" data-bar-spirit="campari">Campari</button>
+          <button class="chip" data-bar-spirit="aperol">Aperol</button>
         </div>
       </div>
     </div>
@@ -370,13 +370,19 @@
       panel.classList.toggle('visible');
     });
 
-    /* ── Bar checkboxes ── */
-    document.querySelectorAll('.bar-spirits input[type="checkbox"]').forEach(cb => {
-      cb.addEventListener('change', () => {
-        if (cb.checked) barSpirits.add(cb.value);
-        else            barSpirits.delete(cb.value);
-        applyFilters();
-      });
+    /* ── Bar spirit chips (multi-select, OR logic) ── */
+    document.getElementById('bar-spirits').addEventListener('click', e => {
+      const chip = e.target.closest('[data-bar-spirit]');
+      if (!chip) return;
+      const spirit = chip.dataset.barSpirit;
+      if (barSpirits.has(spirit)) {
+        barSpirits.delete(spirit);
+        chip.classList.remove('active');
+      } else {
+        barSpirits.add(spirit);
+        chip.classList.add('active');
+      }
+      applyFilters();
     });
 
     /* ── Theme toggle ── */

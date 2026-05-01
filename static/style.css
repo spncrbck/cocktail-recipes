@@ -283,30 +283,7 @@ body {
 .bar-spirits {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.bar-spirits label {
-  display: flex;
-  align-items: center;
   gap: 0.4rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 0.28rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-chip);
-  transition: color 0.15s, border-color 0.15s;
-  user-select: none;
-}
-
-.bar-spirits label:hover { color: var(--text); border-color: #444; }
-.bar-spirits label:has(input:checked) { color: var(--gold); border-color: var(--gold-dim); }
-
-.bar-spirits input[type="checkbox"] {
-  accent-color: var(--gold);
-  width: 13px;
-  height: 13px;
 }
 
 /* ── Main content ── */
