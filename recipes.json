@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Moscow Mule",
+    "garnish": "lime wedge",
+    "served": "over ice",
+    "vessel": "copper mug",
+    "ingredients": [
+      { "name": "vodka",       "amount": 2,   "unit": "oz" },
+      { "name": "ginger beer", "amount": 4,   "unit": "oz" },
+      { "name": "lime juice",  "amount": 0.5, "unit": "oz" }
+    ]
+  },
+  {
+    "name": "Gin and Tonic",
+    "garnish": "lime wedge",
+    "served": "over ice",
+    "vessel": "highball glass",
+    "ingredients": [
+      { "name": "gin",         "amount": 2,   "unit": "oz" },
+      { "name": "tonic water", "amount": 4,   "unit": "oz" },
+      { "name": "lime juice",  "amount": 0.5, "unit": "oz" }
+    ]
+  },
+  {
+    "name": "Manhattan",
+    "garnish": "cherry",
+    "served": "neat",
+    "vessel": "coupe",
+    "ingredients": [
+      { "name": "rye whiskey",      "amount": 2, "unit": "oz"   },
+      { "name": "sweet vermouth",   "amount": 1, "unit": "oz"   },
+      { "name": "angostura bitters","amount": 2, "unit": "dash" }
+    ]
+  }
+]

@@ -1,37 +1,11 @@
+import json
 import os
 import sqlite3
 from flask import Flask, g, jsonify, render_template, request
 
 app = Flask(__name__)
 DB_PATH = os.path.join(os.path.dirname(__file__), "recipes.db")
-
-SEED_RECIPES = [
-    {
-        "name": "Moscow Mule",
-        "garnish": "lime wedge",
-        "served": "over ice",
-        "vessel": "copper mug",
-        "ingredients": [("vodka", 2, "oz"), ("ginger beer", 4, "oz"), ("lime juice", 0.5, "oz")],
-    },
-    {
-        "name": "Gin and Tonic",
-        "garnish": "lime wedge",
-        "served": "over ice",
-        "vessel": "highball glass",
-        "ingredients": [("gin", 2, "oz"), ("tonic water", 4, "oz"), ("lime juice", 0.5, "oz")],
-    },
-    {
-        "name": "Manhattan",
-        "garnish": "cherry",
-        "served": "neat",
-        "vessel": "coupe",
-        "ingredients": [
-            ("rye whiskey", 2, "oz"),
-            ("sweet vermouth", 1, "oz"),
-            ("angostura bitters", 2, "dash"),
-        ],
-    },
-]
+RECIPES_PATH = os.path.join(os.path.dirname(__file__), "recipes.json")
 
 
 def get_db():
@@ -68,15 +42,17 @@ def init_db():
         );
     """)
     if db.execute("SELECT COUNT(*) FROM recipes").fetchone()[0] == 0:
-        for drink in SEED_RECIPES:
+        with open(RECIPES_PATH) as f:
+            seed = json.load(f)
+        for drink in seed:
             cur = db.execute(
                 "INSERT INTO recipes (name, garnish, served, vessel) VALUES (?, ?, ?, ?)",
                 (drink["name"], drink["garnish"], drink["served"], drink["vessel"]),
             )
-            for name, amount, unit in drink["ingredients"]:
+            for ing in drink["ingredients"]:
                 db.execute(
                     "INSERT INTO ingredients (recipe_id, name, amount, unit) VALUES (?, ?, ?, ?)",
-                    (cur.lastrowid, name, amount, unit),
+                    (cur.lastrowid, ing["name"], ing["amount"], ing["unit"]),
                 )
         db.commit()
 
