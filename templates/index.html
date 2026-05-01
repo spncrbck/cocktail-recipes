@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Recipes</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Cocktail Recipes</h1>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search by name or ingredient..."
+      autocomplete="off"
+    >
+  </header>
+
+  <main>
+    <div id="recipes" class="recipe-grid"></div>
+  </main>
+
+  <script>
+    const searchEl = document.getElementById('search');
+    const recipesEl = document.getElementById('recipes');
+
+    async function loadRecipes(q = '') {
+      const url = q ? `/api/recipes?q=${encodeURIComponent(q)}` : '/api/recipes';
+      const res = await fetch(url);
+      const recipes = await res.json();
+      render(recipes);
+    }
+
+    function formatAmount(amount) {
+      // Show integers without decimal (2 not 2.0)
+      return Number.isInteger(amount) ? amount : amount;
+    }
+
+    function render(recipes) {
+      if (recipes.length === 0) {
+        recipesEl.innerHTML = '<p class="empty">No recipes found.</p>';
+        return;
+      }
+      recipesEl.innerHTML = recipes.map(r => `
+        <div class="card">
+          <h2>${r.name}</h2>
+          <div class="meta">
+            <span>${r.vessel}</span>
+            <span>${r.served}</span>
+          </div>
+          <ul class="ingredients">
+            ${r.ingredients.map(i => `<li><strong>${formatAmount(i.amount)} ${i.unit}</strong> ${i.name}</li>`).join('')}
+          </ul>
+          ${r.garnish ? `<p class="garnish">Garnish: ${r.garnish}</p>` : ''}
+        </div>
+      `).join('');
+    }
+
+    let timer;
+    searchEl.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => loadRecipes(searchEl.value.trim()), 250);
+    });
+
+    loadRecipes();
+  </script>
+</body>
+</html>
