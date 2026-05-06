@@ -74,6 +74,8 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 1.25rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .site-title {
@@ -108,6 +110,7 @@ body {
 
 .search-wrap {
   position: relative;
+  max-width: 300px;
 }
 
 /* ── Theme toggle ── */
@@ -174,11 +177,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  flex-wrap: wrap;
 }
-.filter-row::-webkit-scrollbar { display: none; }
 
 .filter-label {
   font-size: 0.68rem;
@@ -193,7 +193,11 @@ body {
 .filter-chips {
   display: flex;
   gap: 0.4rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+}
+
+#spirit-show-more {
+  display: inline-flex;
 }
 
 .chip {
