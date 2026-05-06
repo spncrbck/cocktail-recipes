@@ -64,15 +64,14 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--header-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--surface);
   border-bottom: 1px solid var(--border);
   transition: background-color 0.2s, border-color 0.2s;
 }
 
 .header-top {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 2rem;
   padding: 1.25rem 2rem;
@@ -109,14 +108,11 @@ body {
 }
 
 .search-wrap {
-  flex: 1;
-  max-width: 480px;
   position: relative;
 }
 
 /* ── Theme toggle ── */
 .theme-toggle {
-  flex-shrink: 0;
   width: 36px;
   height: 36px;
   border-radius: 50%;
