@@ -109,7 +109,7 @@
         "unit": "oz"
       },
       {
-        "name": "St-Germain",
+        "name": "elderflower liqueur",
         "amount": 0.25,
         "unit": "oz"
       },
@@ -151,7 +151,7 @@
         "unit": "oz"
       },
       {
-        "name": "Luxardo maraschino liqueur",
+        "name": "maraschino liqueur",
         "amount": 0.25,
         "unit": "oz"
       },
@@ -188,7 +188,7 @@
         "unit": "oz"
       },
       {
-        "name": "Kahlúa",
+        "name": "coffee liqueur",
         "amount": 0.5,
         "unit": "oz"
       },
@@ -296,7 +296,7 @@
     "flavor_description": "Mezcal's smoke meets Aperol's bitterness with a citrus spine.",
     "ingredients": [
       {
-        "name": "Del Maguey Vida mezcal",
+        "name": "mezcal",
         "amount": 1.5,
         "unit": "oz"
       },
@@ -306,7 +306,7 @@
         "unit": "oz"
       },
       {
-        "name": "Luxardo maraschino liqueur",
+        "name": "maraschino liqueur",
         "amount": 0.25,
         "unit": "oz"
       },
@@ -511,51 +511,6 @@
     "notes": "Original recipe by @stevenfingar. Built directly in a mini Diet Coke can (~4 oz) using a Drafttop opener. Diet Coke is the vessel and topper — not a measured ingredient."
   },
   {
-    "name": "Schmuck Margarita & Cream",
-    "garnish": "",
-    "served": "blended",
-    "vessel": "coupe",
-    "flavor_tags": [
-      "fruity",
-      "citrusy",
-      "sweet"
-    ],
-    "flavor_description": "A blended tequila dream with cherry and yuzu, crowned with whipped cream.",
-    "ingredients": [
-      {
-        "name": "tequila blanco",
-        "amount": 2,
-        "unit": "oz"
-      },
-      {
-        "name": "yuzu dry curaçao",
-        "amount": 0.75,
-        "unit": "oz"
-      },
-      {
-        "name": "agave syrup",
-        "amount": 0.5,
-        "unit": "oz"
-      },
-      {
-        "name": "frozen cherries",
-        "amount": 0.5,
-        "unit": "oz"
-      },
-      {
-        "name": "lime juice",
-        "amount": 1,
-        "unit": "oz"
-      }
-    ],
-    "attribution": "IG @drinksbyevie",
-    "special_tags": [
-      "inferred",
-      "frozen"
-    ],
-    "notes": "Original recipe for 2 — halved to single-serve. Add pinch xanthan gum to blender with pebble ice. Top with whipped cream (Greek yogurt, agave, vanilla bean paste, kosher salt, heavy cream — beaten to stiff peaks). Cream recipe makes 6–8 servings. Inspired by @schmuck.ny."
-  },
-  {
     "name": "La Pistola",
     "garnish": "coffee beans, flamed orange peel (discarded)",
     "served": "stirred, on the rocks",
@@ -583,7 +538,7 @@
         "unit": "oz"
       },
       {
-        "name": "Licor 43",
+        "name": "vanilla liqueur",
         "amount": 0.5,
         "unit": "oz"
       },
@@ -849,7 +804,7 @@
     "flavor_description": "Mezcal with pineapple and Aperol — a Jungle Bird riff with more smoke.",
     "ingredients": [
       {
-        "name": "Del Maguey Vida mezcal",
+        "name": "mezcal",
         "amount": 2,
         "unit": "oz"
       },
@@ -938,7 +893,7 @@
         "unit": "oz"
       },
       {
-        "name": "Pierre Ferrand Dry Curaçao",
+        "name": "dry curaçao",
         "amount": 0.5,
         "unit": "oz"
       },
@@ -1027,7 +982,7 @@
         "unit": "oz"
       },
       {
-        "name": "espadin mezcal",
+        "name": "mezcal",
         "amount": 0.5,
         "unit": "oz"
       },
@@ -1074,7 +1029,7 @@
         "unit": "oz"
       },
       {
-        "name": "Giffard Banane du Bresil",
+        "name": "banana liqueur",
         "amount": 0.5,
         "unit": "oz"
       },
@@ -1170,7 +1125,7 @@
         "unit": "oz"
       },
       {
-        "name": "Licor 43",
+        "name": "vanilla liqueur",
         "amount": 0.5,
         "unit": "oz"
       },
@@ -1266,7 +1221,7 @@
         "unit": "oz"
       },
       {
-        "name": "Licor 43",
+        "name": "vanilla liqueur",
         "amount": 0.33,
         "unit": "oz"
       },
@@ -1389,7 +1344,7 @@
         "unit": "oz"
       },
       {
-        "name": "Kahlúa",
+        "name": "coffee liqueur",
         "amount": 0.75,
         "unit": "oz"
       },
@@ -1572,7 +1527,7 @@
         "unit": "oz"
       },
       {
-        "name": "espadin mezcal",
+        "name": "mezcal",
         "amount": 0.5,
         "unit": "oz"
       },
