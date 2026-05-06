@@ -369,10 +369,6 @@
       applyFilters();
     }
 
-    /* ── Spirit filter chips (multi-select, OR logic) ── */
-    document.getElementById('spirit-filters').addEventListener('click', spiritFilterHandler);
-    document.getElementById('spirit-filters-extra').addEventListener('click', spiritFilterHandler);
-
     /* ── Vibe filter chips (multi-select, AND logic) ── */
     const vibeFilterHandler = (e) => {
       const chip = e.target.closest('[data-vibe]');
@@ -628,8 +624,9 @@
       applyFilters();
     };
 
-    // Add barIngredients to state
-    let barIngredients = new Set();
+    /* ── Spirit filter chips (multi-select, OR logic) ── */
+    document.getElementById('spirit-filters').addEventListener('click', spiritFilterHandler);
+    document.getElementById('spirit-filters-extra').addEventListener('click', spiritFilterHandler);
 
     loadRecipes();
     loadStats();
