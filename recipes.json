@@ -4,12 +4,28 @@
     "garnish": "lime wedge",
     "served": "over ice",
     "vessel": "copper mug",
-    "flavor_tags": ["citrusy", "spicy", "refreshing"],
+    "flavor_tags": [
+      "citrusy",
+      "spicy",
+      "refreshing"
+    ],
     "flavor_description": "Ginger-forward with bright lime, built over ice in a copper mug.",
     "ingredients": [
-      { "name": "vodka", "amount": 2, "unit": "oz" },
-      { "name": "ginger beer", "amount": 4, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "vodka",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "ginger beer",
+        "amount": 4,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ]
   },
   {
@@ -17,12 +33,28 @@
     "garnish": "lime wedge",
     "served": "over ice",
     "vessel": "highball glass",
-    "flavor_tags": ["bitter", "refreshing", "citrusy"],
+    "flavor_tags": [
+      "bitter",
+      "refreshing",
+      "citrusy"
+    ],
     "flavor_description": "Crisp and botanical with the clean edge of tonic.",
     "ingredients": [
-      { "name": "gin", "amount": 2, "unit": "oz" },
-      { "name": "tonic water", "amount": 4, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "gin",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "tonic water",
+        "amount": 4,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ]
   },
   {
@@ -30,12 +62,28 @@
     "garnish": "cherry",
     "served": "neat",
     "vessel": "coupe",
-    "flavor_tags": ["boozy", "bitter", "rich"],
+    "flavor_tags": [
+      "boozy",
+      "bitter",
+      "rich"
+    ],
     "flavor_description": "A stirred classic — deep, dark, and unapologetically strong.",
     "ingredients": [
-      { "name": "rye whiskey", "amount": 2, "unit": "oz" },
-      { "name": "sweet vermouth", "amount": 1, "unit": "oz" },
-      { "name": "angostura bitters", "amount": 2, "unit": "dash" }
+      {
+        "name": "rye whiskey",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "sweet vermouth",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "angostura bitters",
+        "amount": 2,
+        "unit": "dash"
+      }
     ]
   },
   {
@@ -43,14 +91,38 @@
     "garnish": "lemon twist",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["floral", "citrusy", "herbal"],
+    "flavor_tags": [
+      "floral",
+      "citrusy",
+      "herbal"
+    ],
     "flavor_description": "Thyme-muddled gin with elderflower and lemon — elegant and aromatic.",
     "ingredients": [
-      { "name": "gin", "amount": 2, "unit": "oz" },
-      { "name": "simple syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "St-Germain", "amount": 0.25, "unit": "oz" },
-      { "name": "lemon juice", "amount": 1, "unit": "oz" },
-      { "name": "fresh thyme sprigs", "amount": 4, "unit": "" }
+      {
+        "name": "gin",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "simple syrup",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "St-Germain",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "fresh thyme sprigs",
+        "amount": 4,
+        "unit": ""
+      }
     ],
     "attribution": "",
     "special_tags": [],
@@ -61,13 +133,33 @@
     "garnish": "",
     "served": "stirred, up",
     "vessel": "coupe",
-    "flavor_tags": ["herbal", "citrusy", "bitter"],
+    "flavor_tags": [
+      "herbal",
+      "citrusy",
+      "bitter"
+    ],
     "flavor_description": "A bold gin sour with herbal complexity and maraschino depth.",
     "ingredients": [
-      { "name": "gin", "amount": 2, "unit": "oz" },
-      { "name": "Clossterbitter liqueur", "amount": 1, "unit": "oz" },
-      { "name": "Luxardo maraschino liqueur", "amount": 0.25, "unit": "oz" },
-      { "name": "lime juice", "amount": 1, "unit": "oz" }
+      {
+        "name": "gin",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "Clossterbitter liqueur",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "Luxardo maraschino liqueur",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1,
+        "unit": "oz"
+      }
     ],
     "attribution": "",
     "special_tags": [],
@@ -78,13 +170,33 @@
     "garnish": "",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["creamy", "sweet", "rich"],
+    "flavor_tags": [
+      "creamy",
+      "sweet",
+      "rich"
+    ],
     "flavor_description": "Velvet-smooth with coffee and almond, finished with a cocoa whisper.",
     "ingredients": [
-      { "name": "vodka", "amount": 2, "unit": "oz" },
-      { "name": "amaretto", "amount": 1, "unit": "oz" },
-      { "name": "Kahlúa", "amount": 0.5, "unit": "oz" },
-      { "name": "cocoa bitters", "amount": 3, "unit": "dash" }
+      {
+        "name": "vodka",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "amaretto",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "Kahlúa",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "cocoa bitters",
+        "amount": 3,
+        "unit": "dash"
+      }
     ],
     "attribution": "",
     "special_tags": [],
@@ -95,13 +207,33 @@
     "garnish": "",
     "served": "shaken, up",
     "vessel": "martini",
-    "flavor_tags": ["citrusy", "herbal", "boozy"],
+    "flavor_tags": [
+      "citrusy",
+      "herbal",
+      "boozy"
+    ],
     "flavor_description": "A rye sour with vermouth depth — forgotten and worth remembering.",
     "ingredients": [
-      { "name": "rye whiskey", "amount": 1.5, "unit": "oz" },
-      { "name": "sweet vermouth", "amount": 0.75, "unit": "oz" },
-      { "name": "triple sec", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "rye whiskey",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "sweet vermouth",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "triple sec",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @theeducatedbarfly",
     "special_tags": [],
@@ -112,17 +244,43 @@
     "garnish": "fresh or frozen berries",
     "served": "built, on the rocks",
     "vessel": "tiki",
-    "flavor_tags": ["tropical", "fruity", "citrusy"],
+    "flavor_tags": [
+      "tropical",
+      "fruity",
+      "citrusy"
+    ],
     "flavor_description": "Tequila, berries, and citrus over ice — bright and unapologetic.",
     "ingredients": [
-      { "name": "tequila", "amount": 4, "unit": "oz" },
-      { "name": "berry syrup", "amount": 1.5, "unit": "oz" },
-      { "name": "orange juice", "amount": 2, "unit": "oz" },
-      { "name": "lime juice", "amount": 2, "unit": "oz" },
-      { "name": "Tajín", "amount": 1, "unit": "dash" }
+      {
+        "name": "tequila",
+        "amount": 4,
+        "unit": "oz"
+      },
+      {
+        "name": "berry syrup",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "orange juice",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "Tajín",
+        "amount": 1,
+        "unit": "dash"
+      }
     ],
     "attribution": "IG @brittsbevs",
-    "special_tags": ["inferred"],
+    "special_tags": [
+      "inferred"
+    ],
     "notes": "Top with grapefruit soda to fill — amount unspecified. Served in a clay cantarito cup or equivalent. Berry syrup recipe on creator's page."
   },
   {
@@ -130,13 +288,33 @@
     "garnish": "grapefruit twist",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["smoky", "bitter", "citrusy"],
+    "flavor_tags": [
+      "smoky",
+      "bitter",
+      "citrusy"
+    ],
     "flavor_description": "Mezcal's smoke meets Aperol's bitterness with a citrus spine.",
     "ingredients": [
-      { "name": "Del Maguey Vida mezcal", "amount": 1.5, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.75, "unit": "oz" },
-      { "name": "Luxardo maraschino liqueur", "amount": 0.25, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" }
+      {
+        "name": "Del Maguey Vida mezcal",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "Luxardo maraschino liqueur",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.75,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @luifern",
     "special_tags": [],
@@ -147,13 +325,33 @@
     "garnish": "lime wedge or lime twist",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["tropical", "fruity", "refreshing"],
+    "flavor_tags": [
+      "tropical",
+      "fruity",
+      "refreshing"
+    ],
     "flavor_description": "Aged rum and pineapple with just enough grenadine to blush.",
     "ingredients": [
-      { "name": "aged rum", "amount": 2, "unit": "oz" },
-      { "name": "grenadine", "amount": 0.5, "unit": "oz" },
-      { "name": "pineapple juice", "amount": 1, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.25, "unit": "oz" }
+      {
+        "name": "aged rum",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "grenadine",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.25,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @anatomyofadrink",
     "special_tags": [],
@@ -164,18 +362,48 @@
     "garnish": "lime wheel",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["tropical", "smoky", "citrusy"],
+    "flavor_tags": [
+      "tropical",
+      "smoky",
+      "citrusy"
+    ],
     "flavor_description": "A tequila-mezcal hybrid with pineapple and Aperol — sun-soaked.",
     "ingredients": [
-      { "name": "tequila", "amount": 1.5, "unit": "oz" },
-      { "name": "mezcal", "amount": 0.5, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "agave syrup", "amount": 1, "unit": "barspoon" },
-      { "name": "pineapple juice", "amount": 1.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 1, "unit": "oz" }
+      {
+        "name": "tequila",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "mezcal",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "agave syrup",
+        "amount": 1,
+        "unit": "barspoon"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @lebarmanruben",
-    "special_tags": ["inferred"],
+    "special_tags": [
+      "inferred"
+    ],
     "notes": "Aperol amount listed as '1/2' with no unit — inferred 0.5 oz."
   },
   {
@@ -183,15 +411,34 @@
     "garnish": "cucumber slice, pineapple leaf",
     "served": "built, on the rocks",
     "vessel": "highball",
-    "flavor_tags": ["tropical", "refreshing", "herbal"],
+    "flavor_tags": [
+      "tropical",
+      "refreshing",
+      "herbal"
+    ],
     "flavor_description": "Cucumber-pineapple-mint in liquid form, spiked with reposado.",
     "ingredients": [
-      { "name": "tequila reposado", "amount": 1.5, "unit": "oz" },
-      { "name": "pineapple cucumber mint agua fresca", "amount": 4, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "tequila reposado",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple cucumber mint agua fresca",
+        "amount": 4,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @hrnaeatz",
-    "special_tags": ["inferred", "batch"],
+    "special_tags": [
+      "inferred",
+      "batch"
+    ],
     "notes": "Batch recipe: blend 2 cucumbers + 1 pineapple + 1 cup sugar + 4 cups water + mint, strain, add 2–3 cups water and lime juice. Rim glass with spicy salt. Add 1 shot tequila reposado per glass, top with fresca. Single-serve amounts inferred."
   },
   {
@@ -199,13 +446,33 @@
     "garnish": "brandied cherry",
     "served": "stirred, up",
     "vessel": "coupe",
-    "flavor_tags": ["bitter", "boozy", "rich"],
+    "flavor_tags": [
+      "bitter",
+      "boozy",
+      "rich"
+    ],
     "flavor_description": "A spirit-forward, chocolate-tinged Bourbon boulevardier — stirred, complex, and brooding.",
     "ingredients": [
-      { "name": "bourbon", "amount": 1.5, "unit": "oz" },
-      { "name": "Campari", "amount": 0.75, "unit": "oz" },
-      { "name": "sweet vermouth", "amount": 0.75, "unit": "oz" },
-      { "name": "chocolate bitters", "amount": 2.5, "unit": "dash" }
+      {
+        "name": "bourbon",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Campari",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "sweet vermouth",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "chocolate bitters",
+        "amount": 2.5,
+        "unit": "dash"
+      }
     ],
     "attribution": "Sam Ross, 2005",
     "special_tags": [],
@@ -216,12 +483,28 @@
     "garnish": "lime, maraschino cherries",
     "served": "built, on the rocks",
     "vessel": "unknown",
-    "flavor_tags": ["fruity", "citrusy", "refreshing"],
+    "flavor_tags": [
+      "fruity",
+      "citrusy",
+      "refreshing"
+    ],
     "flavor_description": "Vodka and grenadine in a Diet Coke can — deliberately irreverent.",
     "ingredients": [
-      { "name": "vodka", "amount": 1.5, "unit": "oz" },
-      { "name": "grenadine", "amount": 0.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "vodka",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "grenadine",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @mitchellbright",
     "special_tags": [],
@@ -232,17 +515,44 @@
     "garnish": "",
     "served": "blended",
     "vessel": "coupe",
-    "flavor_tags": ["fruity", "citrusy", "sweet"],
+    "flavor_tags": [
+      "fruity",
+      "citrusy",
+      "sweet"
+    ],
     "flavor_description": "A blended tequila dream with cherry and yuzu, crowned with whipped cream.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2, "unit": "oz" },
-      { "name": "yuzu dry curaçao", "amount": 0.75, "unit": "oz" },
-      { "name": "agave syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "frozen cherries", "amount": 0.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 1, "unit": "oz" }
+      {
+        "name": "tequila blanco",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "yuzu dry curaçao",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "agave syrup",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "frozen cherries",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @drinksbyevie",
-    "special_tags": ["inferred", "frozen"],
+    "special_tags": [
+      "inferred",
+      "frozen"
+    ],
     "notes": "Original recipe for 2 — halved to single-serve. Add pinch xanthan gum to blender with pebble ice. Top with whipped cream (Greek yogurt, agave, vanilla bean paste, kosher salt, heavy cream — beaten to stiff peaks). Cream recipe makes 6–8 servings. Inspired by @schmuck.ny."
   },
   {
@@ -250,15 +560,43 @@
     "garnish": "coffee beans, flamed orange peel (discarded)",
     "served": "stirred, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["smoky", "bitter", "rich"],
+    "flavor_tags": [
+      "smoky",
+      "bitter",
+      "rich"
+    ],
     "flavor_description": "Tequila with coffee and mezcal smoke — dark, complex, devastating.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2, "unit": "oz" },
-      { "name": "mezcal", "amount": 1, "unit": "rinse" },
-      { "name": "coffee liqueur", "amount": 0.5, "unit": "oz" },
-      { "name": "Licor 43", "amount": 0.5, "unit": "oz" },
-      { "name": "orange bitters", "amount": 4, "unit": "dash" },
-      { "name": "chocolate bitters", "amount": 4, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "mezcal",
+        "amount": 1,
+        "unit": "rinse"
+      },
+      {
+        "name": "coffee liqueur",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Licor 43",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "orange bitters",
+        "amount": 4,
+        "unit": "dash"
+      },
+      {
+        "name": "chocolate bitters",
+        "amount": 4,
+        "unit": "dash"
+      }
     ],
     "attribution": "IG @alans.bar",
     "special_tags": [],
@@ -269,14 +607,38 @@
     "garnish": "",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["fruity", "citrusy", "bitter"],
+    "flavor_tags": [
+      "fruity",
+      "citrusy",
+      "bitter"
+    ],
     "flavor_description": "Gin and strawberry with Campari's edge — pink but not precious.",
     "ingredients": [
-      { "name": "gin", "amount": 1.75, "unit": "oz" },
-      { "name": "strawberry syrup", "amount": 0.75, "unit": "oz" },
-      { "name": "Campari", "amount": 0.25, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.75, "unit": "oz" },
-      { "name": "egg white", "amount": 1, "unit": "" }
+      {
+        "name": "gin",
+        "amount": 1.75,
+        "unit": "oz"
+      },
+      {
+        "name": "strawberry syrup",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "Campari",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "egg white",
+        "amount": 1,
+        "unit": ""
+      }
     ],
     "attribution": "IG @theeducatedbarfly",
     "special_tags": [],
@@ -287,13 +649,33 @@
     "garnish": "",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["spicy", "herbal", "citrusy"],
+    "flavor_tags": [
+      "spicy",
+      "herbal",
+      "citrusy"
+    ],
     "flavor_description": "Gin meets cinnamon and basil — warm, aromatic, and unexpected.",
     "ingredients": [
-      { "name": "gin", "amount": 2, "unit": "oz" },
-      { "name": "cinnamon syrup", "amount": 0.75, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.75, "unit": "oz" },
-      { "name": "basil leaves", "amount": 3, "unit": "" }
+      {
+        "name": "gin",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "cinnamon syrup",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "basil leaves",
+        "amount": 3,
+        "unit": ""
+      }
     ],
     "attribution": "IG @theeducatedbarfly",
     "special_tags": [],
@@ -304,13 +686,33 @@
     "garnish": "grapefruit wheel",
     "served": "shaken, on the rocks",
     "vessel": "highball",
-    "flavor_tags": ["citrusy", "refreshing", "bitter"],
+    "flavor_tags": [
+      "citrusy",
+      "refreshing",
+      "bitter"
+    ],
     "flavor_description": "Irish whiskey chased with grapefruit and Aperol's bittersweet bite.",
     "ingredients": [
-      { "name": "Irish whiskey", "amount": 1.5, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "simple syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "grapefruit juice", "amount": 1.5, "unit": "oz" }
+      {
+        "name": "Irish whiskey",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "simple syrup",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "grapefruit juice",
+        "amount": 1.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @drinkswithdanica",
     "special_tags": [],
@@ -321,15 +723,33 @@
     "garnish": "lime wedge",
     "served": "built, on the rocks",
     "vessel": "highball",
-    "flavor_tags": ["citrusy", "refreshing", "boozy"],
+    "flavor_tags": [
+      "citrusy",
+      "refreshing",
+      "boozy"
+    ],
     "flavor_description": "Tequila and Coke over ice with lime — Mexico's answer to the Jack and Coke.",
     "ingredients": [
-      { "name": "tequila", "amount": 2, "unit": "oz" },
-      { "name": "Coca-Cola", "amount": 4, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "tequila",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "Coca-Cola",
+        "amount": 4,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @pamwiz",
-    "special_tags": ["inferred"],
+    "special_tags": [
+      "inferred"
+    ],
     "notes": "Created 1961 by Don Javier Delgado Corona at La Capilla, Tequila, Jalisco. Traditionally stirred with the same knife used to cut the limes. Rim with coarse or kosher salt. Amounts inferred from classic proportions."
   },
   {
@@ -337,12 +757,28 @@
     "garnish": "",
     "served": "stirred, up",
     "vessel": "coupe",
-    "flavor_tags": ["smoky", "bitter", "boozy"],
+    "flavor_tags": [
+      "smoky",
+      "bitter",
+      "boozy"
+    ],
     "flavor_description": "Equal parts Campari, Laphroaig, and Chartreuse — not for the faint.",
     "ingredients": [
-      { "name": "Laphroaig scotch whisky", "amount": 1, "unit": "oz" },
-      { "name": "Campari", "amount": 1, "unit": "oz" },
-      { "name": "green Chartreuse", "amount": 1, "unit": "oz" }
+      {
+        "name": "Laphroaig scotch whisky",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "Campari",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "green Chartreuse",
+        "amount": 1,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @cocktailchap",
     "special_tags": [],
@@ -353,16 +789,48 @@
     "garnish": "lime wheel or lime wedge",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["tropical", "smoky", "citrusy"],
+    "flavor_tags": [
+      "tropical",
+      "smoky",
+      "citrusy"
+    ],
     "flavor_description": "Tequila and mezcal with pineapple and passionfruit — summery and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1, "unit": "oz" },
-      { "name": "mezcal", "amount": 0.5, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "simple syrup", "amount": 0.25, "unit": "oz" },
-      { "name": "passionfruit syrup", "amount": 1, "unit": "tsp" },
-      { "name": "pineapple juice", "amount": 0.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "tequila blanco",
+        "amount": 1,
+        "unit": "oz"
+      },
+      {
+        "name": "mezcal",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "simple syrup",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "passionfruit syrup",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @anatomyofadrink",
     "special_tags": [],
@@ -373,14 +841,38 @@
     "garnish": "pineapple fronds",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["smoky", "tropical", "citrusy"],
+    "flavor_tags": [
+      "smoky",
+      "tropical",
+      "citrusy"
+    ],
     "flavor_description": "Mezcal with pineapple and Aperol — a Jungle Bird riff with more smoke.",
     "ingredients": [
-      { "name": "Del Maguey Vida mezcal", "amount": 2, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "simple syrup", "amount": 0.25, "unit": "oz" },
-      { "name": "pineapple juice", "amount": 1.75, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.5, "unit": "oz" }
+      {
+        "name": "Del Maguey Vida mezcal",
+        "amount": 2,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "simple syrup",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 1.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 0.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "IG @anatomyofadrink",
     "special_tags": [],
@@ -391,69 +883,85 @@
     "garnish": "cilantro, green apple",
     "served": "shaken, on the rocks",
     "vessel": "highball",
-    "flavor_tags": ["citrusy", "refreshing", "herbaceous"],
+    "flavor_tags": [
+      "citrusy",
+      "refreshing",
+      "herbaceous"
+    ],
     "flavor_description": "Tequila with green apple juice and cilantro — crisp and aromatic.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "honey syrup", "amount": 1.0, "unit": "oz" },
-      { "name": "fresh green apple juice", "amount": 2.0, "unit": "oz" },
-      { "name": "lime juice", "amount": 1.0, "unit": "oz" },
-      { "name": "cilantro", "amount": 1, "unit": "splash" }
+      {
+        "name": "tequila blanco",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "honey syrup",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "apple juice",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "cilantro",
+        "amount": 1,
+        "unit": "splash"
+      }
     ],
     "attribution": "Raja Das, IG @its_black_pepper",
     "special_tags": [],
     "notes": "Rim glass. Muddle coriander/cilantro, add remaining ingredients and shake. Double strain into glass with fresh ice."
   },
   {
-    "name": "Jalisco Sunset",
-    "garnish": "grapefruit wedge",
-    "served": "built, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["citrusy", "spicy", "refreshing"],
-    "flavor_description": "Ginger-infused tequila with grapefruit and tonic — bright and aromatic.",
-    "ingredients": [
-      { "name": "ginger-infused tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "grapefruit juice", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" },
-      { "name": "grapefruit bitters", "amount": 3, "unit": "dash" },
-      { "name": "tonic water", "amount": 3.0, "unit": "oz" }
-    ],
-    "attribution": "Kailyn Louka, IG @drinkequilibrium",
-    "special_tags": [],
-    "notes": "Add all ingredients to a rocks glass filled with ice and stir briefly."
-  },
-  {
-    "name": "Flor Vieja",
-    "garnish": "apple slices",
-    "served": "shaken, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["fruity", "floral", "citrusy"],
-    "flavor_description": "Tequila with St. Germain and roasted apple shrub — elegant and aromatic.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "St. Germain", "amount": 0.5, "unit": "oz" },
-      { "name": "maraschino liqueur", "amount": 0.25, "unit": "oz" },
-      { "name": "roasted apple shrub", "amount": 0.5, "unit": "oz" },
-      { "name": "lemon juice", "amount": 1.0, "unit": "oz" }
-    ],
-    "attribution": "Paul Fan, IG @elbowdemiglace",
-    "special_tags": [],
-    "notes": ""
-  },
-  {
     "name": "Sunline",
     "garnish": "grapefruit twist",
     "served": "shaken, on the rocks",
     "vessel": "wine",
-    "flavor_tags": ["citrusy", "spicy", "refreshing"],
+    "flavor_tags": [
+      "citrusy",
+      "spicy",
+      "refreshing"
+    ],
     "flavor_description": "Tequila with Aperol and ginger honey syrup — bright and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Pierre Ferrand Dry Curaçao", "amount": 0.5, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.75, "unit": "oz" },
-      { "name": "ginger honey syrup", "amount": 0.75, "unit": "oz" },
-      { "name": "soda water", "amount": 1, "unit": "splash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Pierre Ferrand Dry Curaçao",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "ginger honey syrup",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "soda water",
+        "amount": 1,
+        "unit": "splash"
+      }
     ],
     "attribution": "Amber Mei, IG @meidrinks",
     "special_tags": [],
@@ -464,92 +972,137 @@
     "garnish": "maraschino cherry",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["tropical", "fruity", "herbal"],
+    "flavor_tags": [
+      "tropical",
+      "fruity",
+      "herbal"
+    ],
     "flavor_description": "Tequila with pineapple and green Chartreuse — tropical and aromatic.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "green Chartreuse", "amount": 0.25, "unit": "oz" },
-      { "name": "pineapple juice", "amount": 1.0, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" },
-      { "name": "grenadine", "amount": 0.25, "unit": "oz" }
+      {
+        "name": "tequila blanco",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "green Chartreuse",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "grenadine",
+        "amount": 0.25,
+        "unit": "oz"
+      }
     ],
     "attribution": "Kyle Smith, IG @w.kyle.smith",
     "special_tags": [],
     "notes": "Dry shake pineapple juice first to froth, then wet shake all. Fine strain into chilled coupe."
   },
   {
-    "name": "Diani Current",
-    "garnish": "lime leaf",
-    "served": "shaken, on the rocks",
-    "vessel": "highball",
-    "flavor_tags": ["citrusy", "savory", "refreshing"],
-    "flavor_description": "Tequila with tamarind and saline — tart and complex.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "tamarind shrub", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" },
-      { "name": "saline solution", "amount": 2, "unit": "drop" },
-      { "name": "soda water", "amount": 2.5, "unit": "oz" }
-    ],
-    "attribution": "Polycap Rachuonyo, IG @Polythebartender",
-    "special_tags": [],
-    "notes": "Shake all except soda. Strain into glass over fresh ice. Top with soda."
-  },
-  {
     "name": "Show Me La Plata",
     "garnish": "",
     "served": "shaken, on the rocks",
     "vessel": "unknown",
-    "flavor_tags": ["citrusy", "fruity", "spicy"],
+    "flavor_tags": [
+      "citrusy",
+      "fruity",
+      "spicy"
+    ],
     "flavor_description": "Tequila and mezcal with passion fruit and cinnamon — complex and balanced.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "espadin mezcal", "amount": 0.5, "unit": "oz" },
-      { "name": "passion fruit syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "cinnamon syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 1.0, "unit": "oz" },
-      { "name": "saline solution", "amount": 3, "unit": "drop" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "espadin mezcal",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "passion fruit juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "agave syrup",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "saline solution",
+        "amount": 3,
+        "unit": "drop"
+      }
     ],
     "attribution": "Glen Smith, IG @drinkswithglen",
     "special_tags": [],
     "notes": "Strain into cantarito glass with crush ice. Saline is 5:1 ratio."
   },
   {
-    "name": "La Flor De Fuego",
-    "garnish": "orchid, cilantro",
-    "served": "shaken, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["spicy", "fruity", "smoky"],
-    "flavor_description": "Tequila and mezcal with passion fruit and cilantro — fiery and aromatic.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "fresno-infused reposado tequila", "amount": 0.5, "unit": "oz" },
-      { "name": "passion fruit liqueur", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" },
-      { "name": "espadin mezcal", "amount": 0.25, "unit": "oz" },
-      { "name": "cilantro", "amount": 1, "unit": "splash" }
-    ],
-    "attribution": "Alejandro Cotrina, IG @borderline_bartender_",
-    "special_tags": ["spicy"],
-    "notes": "Shake all minus mezcal. Strain into rocks glass over fresh ice. Float mezcal on top."
-  },
-  {
     "name": "Plata, No?",
     "garnish": "orange twist",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["fruity", "citrusy", "herbal"],
+    "flavor_tags": [
+      "fruity",
+      "citrusy",
+      "herbal"
+    ],
     "flavor_description": "Tequila with banana liqueur and fino sherry — elegant and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Giffard Banane du Bresil", "amount": 0.5, "unit": "oz" },
-      { "name": "fino sherry", "amount": 0.33, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.75, "unit": "oz" },
-      { "name": "simple syrup", "amount": 0.25, "unit": "oz" },
-      { "name": "orange bitters", "amount": 2, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Giffard Banane du Bresil",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "fino sherry",
+        "amount": 0.33,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "simple syrup",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "orange bitters",
+        "amount": 2,
+        "unit": "dash"
+      }
     ],
     "attribution": "Flavor Camp Original",
-    "special_tags": ["inferred"],
+    "special_tags": [
+      "inferred"
+    ],
     "notes": "⅓ oz fino sherry inferred as 0.33 oz."
   },
   {
@@ -557,15 +1110,43 @@
     "garnish": "hibiscus flower",
     "served": "shaken, on the rocks",
     "vessel": "highball",
-    "flavor_tags": ["tropical", "fruity", "bitter"],
+    "flavor_tags": [
+      "tropical",
+      "fruity",
+      "bitter"
+    ],
     "flavor_description": "Tequila with Campari and passion fruit — vibrant and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.25, "unit": "oz" },
-      { "name": "Campari", "amount": 0.75, "unit": "oz" },
-      { "name": "passion fruit syrup", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" },
-      { "name": "agave nectar", "amount": 0.5, "unit": "oz" },
-      { "name": "orange bitters", "amount": 2, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.25,
+        "unit": "oz"
+      },
+      {
+        "name": "Campari",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "passion fruit juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "agave nectar",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "orange bitters",
+        "amount": 2,
+        "unit": "dash"
+      }
     ],
     "attribution": "Benjamin Janneck, IG @benjanneck",
     "special_tags": [],
@@ -576,50 +1157,87 @@
     "garnish": "lemon twist",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["fruity", "citrusy", "elegant"],
+    "flavor_tags": [
+      "fruity",
+      "citrusy",
+      "elegant"
+    ],
     "flavor_description": "Tequila with Licor 43, passionfruit, and cava — sophisticated and bubbly.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.25, "unit": "oz" },
-      { "name": "Licor 43", "amount": 0.5, "unit": "oz" },
-      { "name": "passionfruit purée", "amount": 0.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" },
-      { "name": "cava", "amount": 2.5, "unit": "oz" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.25,
+        "unit": "oz"
+      },
+      {
+        "name": "Licor 43",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "passion fruit juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "cava",
+        "amount": 2.5,
+        "unit": "oz"
+      }
     ],
     "attribution": "Flavor Camp Original",
-    "special_tags": ["inferred"],
-    "notes": "Shake all except cava. Double strain into large coupe. Top with chilled cava. 2.5 oz cava is midpoint of listed 2–3 oz range."
-  },
-  {
-    "name": "That's a Spicy Señorita",
-    "garnish": "pineapple wedge, fronds",
-    "served": "built, on the rocks",
-    "vessel": "highball",
-    "flavor_tags": ["tropical", "spicy", "refreshing"],
-    "flavor_description": "Tequila with Aperol and spicy pineapple hibiscus — bold and tropical.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "spicy pineapple hibiscus syrup", "amount": 1.0, "unit": "oz" },
-      { "name": "soda water", "amount": 2.0, "unit": "oz" }
+    "special_tags": [
+      "inferred"
     ],
-    "attribution": "Amber Peppler, IG @peppyspourdecisions",
-    "special_tags": ["spicy"],
-    "notes": "Build in glass over ice. Stir gently to combine then garnish."
+    "notes": "Shake all except cava. Double strain into large coupe. Top with chilled cava. 2.5 oz cava is midpoint of listed 2–3 oz range."
   },
   {
     "name": "Don Cocoa",
     "garnish": "",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["bitter", "rich", "citrusy"],
+    "flavor_tags": [
+      "bitter",
+      "rich",
+      "citrusy"
+    ],
     "flavor_description": "Tequila with Mia Amata Amaro and chocolate bitters — complex and decadent.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Mia Amata Amaro", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" },
-      { "name": "simple syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "chocolate bitters", "amount": 3, "unit": "dash" },
-      { "name": "saline solution", "amount": 1, "unit": "drop" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Mia Amata Amaro",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "simple syrup",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "chocolate bitters",
+        "amount": 3,
+        "unit": "dash"
+      },
+      {
+        "name": "saline solution",
+        "amount": 1,
+        "unit": "drop"
+      }
     ],
     "attribution": "Vedant Srinivasan, IG @waydahnt",
     "special_tags": [],
@@ -630,17 +1248,43 @@
     "garnish": "orange twist",
     "served": "stirred, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["citrusy", "bitter", "rich"],
+    "flavor_tags": [
+      "citrusy",
+      "bitter",
+      "rich"
+    ],
     "flavor_description": "Tequila with orange aperitivo and Licor 43 — warm and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.75, "unit": "oz" },
-      { "name": "orange aperitivo", "amount": 0.75, "unit": "oz" },
-      { "name": "Licor 43", "amount": 0.33, "unit": "oz" },
-      { "name": "orange vanilla bitters", "amount": 2, "unit": "dash" },
-      { "name": "coffee cacao bitters", "amount": 2, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.75,
+        "unit": "oz"
+      },
+      {
+        "name": "orange aperitivo",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "Licor 43",
+        "amount": 0.33,
+        "unit": "oz"
+      },
+      {
+        "name": "orange vanilla bitters",
+        "amount": 2,
+        "unit": "dash"
+      },
+      {
+        "name": "coffee cacao bitters",
+        "amount": 2,
+        "unit": "dash"
+      }
     ],
     "attribution": "Wade Preston, IG @nancydrinkman",
-    "special_tags": ["inferred"],
+    "special_tags": [
+      "inferred"
+    ],
     "notes": "⅓ oz Licor 43 inferred as 0.33 oz. Stir down all ingredients with ice. Strain into rocks glass over fresh ice."
   },
   {
@@ -648,15 +1292,43 @@
     "garnish": "cacao nib, chili salt rim",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["fruity", "spicy", "savory"],
+    "flavor_tags": [
+      "fruity",
+      "spicy",
+      "savory"
+    ],
     "flavor_description": "Tequila with tamarind and earl grey tea — complex and sophisticated.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Grand Marnier", "amount": 0.5, "unit": "oz" },
-      { "name": "tamarind syrup", "amount": 0.75, "unit": "oz" },
-      { "name": "acid-adjusted pineapple juice", "amount": 1.0, "unit": "oz" },
-      { "name": "earl grey tea", "amount": 2.0, "unit": "oz" },
-      { "name": "chocolate bitters", "amount": 1, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Grand Marnier",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "tamarind syrup",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "earl grey tea",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "chocolate bitters",
+        "amount": 1,
+        "unit": "dash"
+      }
     ],
     "attribution": "Matthew Sinagoga, IG @mixology_matt",
     "special_tags": [],
@@ -667,13 +1339,33 @@
     "garnish": "orange twist",
     "served": "shaken, on the rocks",
     "vessel": "wine",
-    "flavor_tags": ["herbal", "citrusy", "boozy"],
+    "flavor_tags": [
+      "herbal",
+      "citrusy",
+      "boozy"
+    ],
     "flavor_description": "Tequila with black tea, Cointreau, and Benedictine — sophisticated and aromatic.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "chilled strong black tea", "amount": 1.0, "unit": "oz" },
-      { "name": "Cointreau", "amount": 0.5, "unit": "oz" },
-      { "name": "Benedictine", "amount": 0.25, "unit": "oz" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "chilled strong black tea",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "Cointreau",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Benedictine",
+        "amount": 0.25,
+        "unit": "oz"
+      }
     ],
     "attribution": "Randy Walker",
     "special_tags": [],
@@ -684,15 +1376,43 @@
     "garnish": "pineapple fronds",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["tropical", "fruity", "rich"],
+    "flavor_tags": [
+      "tropical",
+      "fruity",
+      "rich"
+    ],
     "flavor_description": "Tequila with Kahlúa and pineapple — tropical and decadent.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "Kahlúa", "amount": 0.75, "unit": "oz" },
-      { "name": "Aperol", "amount": 0.5, "unit": "oz" },
-      { "name": "pineapple juice", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" },
-      { "name": "Aztec chocolate bitters", "amount": 1, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "Kahlúa",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "Aperol",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Aztec chocolate bitters",
+        "amount": 1,
+        "unit": "dash"
+      }
     ],
     "attribution": "Tyler Laitinen, IG @grumpyrumguy",
     "special_tags": [],
@@ -703,125 +1423,135 @@
     "garnish": "orange twist, slice of fig",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["fruity", "rich", "spicy"],
+    "flavor_tags": [
+      "fruity",
+      "rich",
+      "spicy"
+    ],
     "flavor_description": "Tequila with crème de cacao, fig jam, and orange — decadent and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2.5, "unit": "oz" },
-      { "name": "crème de cacao", "amount": 0.5, "unit": "oz" },
-      { "name": "fig jam", "amount": 1, "unit": "barspoon" },
-      { "name": "orange bitters", "amount": 4, "unit": "dash" },
-      { "name": "saline solution", "amount": 3, "unit": "drop" }
+      {
+        "name": "tequila blanco",
+        "amount": 2.5,
+        "unit": "oz"
+      },
+      {
+        "name": "crème de cacao",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "fig jam",
+        "amount": 1,
+        "unit": "barspoon"
+      },
+      {
+        "name": "orange bitters",
+        "amount": 4,
+        "unit": "dash"
+      },
+      {
+        "name": "saline solution",
+        "amount": 3,
+        "unit": "drop"
+      }
     ],
     "attribution": "Travis Croken, IG @Landlcocktails",
     "special_tags": [],
     "notes": ""
   },
   {
-    "name": "Dimchae",
-    "garnish": "kimchi, nori",
-    "served": "shaken, on the rocks",
-    "vessel": "unknown",
-    "flavor_tags": ["savory", "spicy", "umami"],
-    "flavor_description": "Tequila with kimchi and kombu dashi — bold and umami-forward.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "acidified Giffard Poire Williams", "amount": 0.5, "unit": "oz" },
-      { "name": "kimchi juice", "amount": 0.75, "unit": "oz" },
-      { "name": "kombu dashi tomato juice", "amount": 0.75, "unit": "oz" },
-      { "name": "soy sauce", "amount": 1, "unit": "barspoon" },
-      { "name": "sesame oil", "amount": 1, "unit": "splash" }
-    ],
-    "attribution": "Felipe Felix II, IG @ipepots",
-    "special_tags": ["savory"],
-    "notes": "Sesame oil added as 3 sprays. Strain into cantarito glass with crush ice. Kombu dashi tomato juice and acidified Giffard Poire Williams are house-made."
-  },
-  {
-    "name": "A New Beginning",
-    "garnish": "tajin rim, watermelon",
-    "served": "shaken, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["fruity", "spicy", "refreshing"],
-    "flavor_description": "Feta-infused tequila with hot honey and watermelon — savory and sweet.",
-    "ingredients": [
-      { "name": "feta-infused tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "hot honey syrup", "amount": 1.0, "unit": "oz" },
-      { "name": "watermelon juice", "amount": 1.0, "unit": "oz" },
-      { "name": "saline solution", "amount": 1, "unit": "dash" },
-      { "name": "mint leaves", "amount": 6, "unit": "" }
-    ],
-    "attribution": "Paige Jasper, IG @paigejasper19",
-    "special_tags": [],
-    "notes": "Feta-infused tequila and hot honey syrup are house-made per the Homemade Recipes slide."
-  },
-  {
     "name": "Sol y Sal",
     "garnish": "salt and pepper rim",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["savory", "spicy", "fruity"],
+    "flavor_tags": [
+      "savory",
+      "spicy",
+      "fruity"
+    ],
     "flavor_description": "Tequila with tomato, pineapple, and Tabasco — bold and savory.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "tomato juice", "amount": 1.0, "unit": "oz" },
-      { "name": "pineapple juice", "amount": 1.0, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.5, "unit": "oz" },
-      { "name": "agave syrup", "amount": 0.5, "unit": "oz" },
-      { "name": "Tabasco", "amount": 4, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "tomato juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "pineapple juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "lemon juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "agave syrup",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Tabasco",
+        "amount": 4,
+        "unit": "dash"
+      }
     ],
     "attribution": "Jennifer Husereault, IG @cocktailcoquine",
-    "special_tags": ["spicy", "savory"],
+    "special_tags": [
+      "spicy",
+      "savory"
+    ],
     "notes": "Rim cocktail glass. Shake all with ice. Strain over crushed ice."
-  },
-  {
-    "name": "Mai•te•qilla",
-    "garnish": "nutmeg",
-    "served": "shaken, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["nutty", "citrusy", "herbal"],
-    "flavor_description": "Brown butter washed tequila with orgeat and Amaro Montenegro — warm and aromatic.",
-    "ingredients": [
-      { "name": "brown butter washed tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Amaro Montenegro", "amount": 0.5, "unit": "oz" },
-      { "name": "orgeat", "amount": 0.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 1.0, "unit": "oz" }
-    ],
-    "attribution": "Dmytro Sevastianov, IG @dmytrosevastanov",
-    "special_tags": [],
-    "notes": "Shake all with ice. Strain into glass over king cube."
-  },
-  {
-    "name": "Tierra Roja",
-    "garnish": "lemon coin",
-    "served": "shaken, up",
-    "vessel": "coupe",
-    "flavor_tags": ["earthy", "herbal", "citrusy"],
-    "flavor_description": "Tequila with roasted beet shrub and epazote — earthy and complex.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "roasted beet shrub", "amount": 0.5, "unit": "oz" },
-      { "name": "epazote syrup", "amount": 0.25, "unit": "oz" },
-      { "name": "mole bitters", "amount": 2, "unit": "dash" }
-    ],
-    "attribution": "Ben Townsend, IG @bentownsend11",
-    "special_tags": [],
-    "notes": "Shake all with ice. Double strain into chilled coupe. Roasted beet shrub and epazote syrup are house-made."
   },
   {
     "name": "Dale Duro, Colibricito!",
     "garnish": "corn husk",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["tropical", "spicy", "herbal"],
+    "flavor_tags": [
+      "tropical",
+      "spicy",
+      "herbal"
+    ],
     "flavor_description": "Tequila with corn milk syrup and ginger beer — sweet, spicy, and bold.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 2.0, "unit": "oz" },
-      { "name": "corn milk syrup", "amount": 1.5, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.5, "unit": "oz" },
-      { "name": "Cholula green hot sauce", "amount": 2, "unit": "dash" },
-      { "name": "ginger beer", "amount": 1, "unit": "splash" }
+      {
+        "name": "tequila blanco",
+        "amount": 2.0,
+        "unit": "oz"
+      },
+      {
+        "name": "agave syrup",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "Cholula green hot sauce",
+        "amount": 2,
+        "unit": "dash"
+      },
+      {
+        "name": "ginger beer",
+        "amount": 1,
+        "unit": "splash"
+      }
     ],
     "attribution": "Harley Bird, IG @nyxlock",
-    "special_tags": ["spicy"],
+    "special_tags": [
+      "spicy"
+    ],
     "notes": "Shake all minus ginger beer. Strain into rocks glass over fresh ice. Top with ginger beer. Corn milk syrup is house-made."
   },
   {
@@ -829,87 +1559,87 @@
     "garnish": "burnt grapefruit",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["fruity", "spicy", "smoky"],
+    "flavor_tags": [
+      "fruity",
+      "spicy",
+      "smoky"
+    ],
     "flavor_description": "Tequila and mezcal with grenadine and bitters — fiery and complex.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "espadin mezcal", "amount": 0.5, "unit": "oz" },
-      { "name": "grenadine", "amount": 0.75, "unit": "oz" },
-      { "name": "lime juice", "amount": 1.0, "unit": "oz" },
-      { "name": "Angostura bitters", "amount": 3, "unit": "dash" },
-      { "name": "Scrappy's Fire Tincture", "amount": 3, "unit": "dash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "espadin mezcal",
+        "amount": 0.5,
+        "unit": "oz"
+      },
+      {
+        "name": "grenadine",
+        "amount": 0.75,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "Angostura bitters",
+        "amount": 3,
+        "unit": "dash"
+      },
+      {
+        "name": "Scrappy's Fire Tincture",
+        "amount": 3,
+        "unit": "dash"
+      }
     ],
     "attribution": "Mr. H, IG @baddrinkstv",
-    "special_tags": ["spicy"],
+    "special_tags": [
+      "spicy"
+    ],
     "notes": "Shake. Strain on the rocks. Top with grapefruit soda."
-  },
-  {
-    "name": "Nostalgic Candy",
-    "garnish": "watermelon salt rim",
-    "served": "stirred, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["fruity", "spicy", "herbal"],
-    "flavor_description": "Tequila with spicy oloroso and watermelon lemongrass cordial — sophisticated and bold.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "spicy oloroso", "amount": 0.5, "unit": "oz" },
-      { "name": "watermelon lemongrass cordial", "amount": 1.0, "unit": "oz" },
-      { "name": "lemon juice", "amount": 0.5, "unit": "oz" }
-    ],
-    "attribution": "Diego Fuertes Rocha, IG @eldiegroni",
-    "special_tags": ["spicy"],
-    "notes": "Spicy oloroso uses ancho and moruta pepper maceration (referenced in Homemade Recipes slide). Stir all with ice. Strain over king cube in watermelon salt rimmed glass."
-  },
-  {
-    "name": "Pink Heat",
-    "garnish": "grapefruit oils, jalapeño slices",
-    "served": "shaken, on the rocks",
-    "vessel": "rocks",
-    "flavor_tags": ["citrusy", "spicy", "herbal"],
-    "flavor_description": "Tequila with hibiscus honey and jalapeño — bright and fiery.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.75, "unit": "oz" },
-      { "name": "Cointreau", "amount": 0.4, "unit": "oz" },
-      { "name": "hibiscus honey syrup", "amount": 0.25, "unit": "oz" },
-      { "name": "lime juice", "amount": 0.75, "unit": "oz" },
-      { "name": "jalapeño slices", "amount": 2, "unit": "splash" }
-    ],
-    "attribution": "Laureen Braley, IG @_reenie.b",
-    "special_tags": ["spicy"],
-    "notes": "Rim glass. Shake all with ice including pressed jalapeño. Strain over fresh ice. Express grapefruit oils over drink."
-  },
-  {
-    "name": "Rhubarbelicious",
-    "garnish": "cotton candy",
-    "served": "built, on the rocks",
-    "vessel": "highball",
-    "flavor_tags": ["fruity", "tart", "refreshing"],
-    "flavor_description": "Tequila with apricot brandy and rhubarb lemonade — sweet-tart and whimsical.",
-    "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "Giffard Apricot Brandy", "amount": 0.5, "unit": "oz" },
-      { "name": "watermelon syrup", "amount": 0.17, "unit": "oz" },
-      { "name": "agave syrup", "amount": 0.17, "unit": "oz" },
-      { "name": "verjuice", "amount": 0.75, "unit": "oz" },
-      { "name": "rhubarb lemonade", "amount": 1, "unit": "splash" }
-    ],
-    "attribution": "Martin Wolf",
-    "special_tags": ["inferred"],
-    "notes": "Build directly in glass over ice. Top with rhubarb lemonade and stir gently. 5ml syrup amounts converted to ~0.17 oz."
   },
   {
     "name": "Equilibrium",
     "garnish": "boozy cherry",
     "served": "shaken, up",
     "vessel": "coupe",
-    "flavor_tags": ["herbal", "fruity", "citrusy"],
+    "flavor_tags": [
+      "herbal",
+      "fruity",
+      "citrusy"
+    ],
     "flavor_description": "Tequila with three delicate liqueurs and lime — harmonious and balanced.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.5, "unit": "oz" },
-      { "name": "gentian liqueur", "amount": 0.25, "unit": "oz" },
-      { "name": "maraschino liqueur", "amount": 0.25, "unit": "oz" },
-      { "name": "crème de cassis", "amount": 0.25, "unit": "oz" },
-      { "name": "lime juice", "amount": 1.0, "unit": "oz" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.5,
+        "unit": "oz"
+      },
+      {
+        "name": "gentian liqueur",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "maraschino liqueur",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "crème de cassis",
+        "amount": 0.25,
+        "unit": "oz"
+      },
+      {
+        "name": "lime juice",
+        "amount": 1.0,
+        "unit": "oz"
+      }
     ],
     "attribution": "Rob Walker",
     "special_tags": [],
@@ -920,17 +1650,43 @@
     "garnish": "grapefruit wedges",
     "served": "shaken, on the rocks",
     "vessel": "rocks",
-    "flavor_tags": ["citrusy", "bitter", "herbal"],
+    "flavor_tags": [
+      "citrusy",
+      "bitter",
+      "herbal"
+    ],
     "flavor_description": "Tequila with Campari, Benedictine, and grapefruit — bright and herbal.",
     "ingredients": [
-      { "name": "tequila blanco", "amount": 1.0, "unit": "oz" },
-      { "name": "Campari", "amount": 0.33, "unit": "oz" },
-      { "name": "Benedictine", "amount": 0.33, "unit": "oz" },
-      { "name": "pink grapefruit cordial", "amount": 0.33, "unit": "oz" },
-      { "name": "grapefruit soda", "amount": 1, "unit": "splash" }
+      {
+        "name": "tequila blanco",
+        "amount": 1.0,
+        "unit": "oz"
+      },
+      {
+        "name": "Campari",
+        "amount": 0.33,
+        "unit": "oz"
+      },
+      {
+        "name": "Benedictine",
+        "amount": 0.33,
+        "unit": "oz"
+      },
+      {
+        "name": "grapefruit juice",
+        "amount": 0.33,
+        "unit": "oz"
+      },
+      {
+        "name": "grapefruit soda",
+        "amount": 1,
+        "unit": "splash"
+      }
     ],
     "attribution": "Jeffrey Wong, IG @whos_jefferson",
-    "special_tags": ["inferred"],
+    "special_tags": [
+      "inferred"
+    ],
     "notes": "Rim glass. Shake all with ice. Strain over fresh ice and garnish. All ml amounts converted: 30ml≈1.0oz, 10ml≈0.33oz. Casamigos Cristalino brand dropped to tequila blanco per brand rules."
   }
 ]
