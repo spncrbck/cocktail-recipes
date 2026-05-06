@@ -130,6 +130,22 @@ def get_recipe(recipe_id):
     return jsonify(recipe_row_to_dict(row, db))
 
 
+@app.route("/api/stats")
+def stats():
+    db = get_db()
+    total_recipes = db.execute("SELECT COUNT(*) FROM recipes").fetchone()[0]
+    total_ingredients = db.execute("SELECT COUNT(DISTINCT name) FROM ingredients").fetchone()[0]
+    all_tags = db.execute("SELECT flavor_tags FROM recipes WHERE flavor_tags IS NOT NULL AND flavor_tags != '[]'").fetchall()
+    tag_set = set()
+    for row in all_tags:
+        tag_set.update(json.loads(row["flavor_tags"] or "[]"))
+    return jsonify({
+        "recipes": total_recipes,
+        "ingredients": total_ingredients,
+        "flavor_profiles": len(tag_set),
+    })
+
+
 with app.app_context():
     init_db()
 

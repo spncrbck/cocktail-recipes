@@ -117,7 +117,6 @@ body {
 /* ── Theme toggle ── */
 .theme-toggle {
   flex-shrink: 0;
-  margin-left: auto;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -286,6 +285,118 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3.5rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.hero-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--text);
+  margin-bottom: 1.1rem;
+}
+
+.hero-body {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-chip);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  line-height: 1;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* Stat cards */
+.stat-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 110px;
+  max-width: 150px;
+}
+
+.stat-icon {
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 0.2rem;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.hero-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 2rem;
 }
 
 /* ── Main content ── */
@@ -632,6 +743,9 @@ main { padding: 2rem; }
   .recipe-grid { grid-template-columns: 1fr; gap: 1rem; }
   .title-word { font-size: 1.25rem; }
   .detail-page { padding: 2rem 1rem 4rem; }
+  .hero { padding: 3rem 0 2.5rem; }
+  .stat-card { min-width: 90px; padding: 1.25rem 1rem; }
+  .stat-number { font-size: 1.75rem; }
 }
 
 @media (max-width: 900px) {

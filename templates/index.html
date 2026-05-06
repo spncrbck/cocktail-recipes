@@ -18,15 +18,6 @@
         <span class="title-word title-accent">Muddled</span>
         <span class="title-dot"></span>
       </a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
-        <svg class="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.5 1.5a6 6 0 1 0 6 6 4.5 4.5 0 0 1-6-6Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="7.5" cy="7.5" r="2.5" stroke="currentColor" stroke-width="1.3"/>
-          <path d="M7.5 1v1.5M7.5 12.5V14M1 7.5h1.5M12.5 7.5H14M3.1 3.1l1.05 1.05M10.85 10.85l1.05 1.05M10.85 4.15l1.05-1.05M3.1 11.9l1.05-1.05" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        </svg>
-      </button>
       <div class="search-wrap">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.303 10.364C8.53 10.886 7.55 11.2 6.5 11.2C3.906 11.2 1.8 9.094 1.8 6.5C1.8 3.906 3.906 1.8 6.5 1.8C9.094 1.8 11.2 3.906 11.2 6.5C11.2 7.55 10.886 8.53 10.364 9.303L13.03 11.97C13.264 12.204 13.264 12.586 13.03 12.82C12.796 13.054 12.414 13.054 12.18 12.82L9.303 10.364Z" fill="currentColor"/>
@@ -39,6 +30,15 @@
           spellcheck="false"
         >
       </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.5 1.5a6 6 0 1 0 6 6 4.5 4.5 0 0 1-6-6Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7.5" cy="7.5" r="2.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M7.5 1v1.5M7.5 12.5V14M1 7.5h1.5M12.5 7.5H14M3.1 3.1l1.05 1.05M10.85 10.85l1.05 1.05M10.85 4.15l1.05-1.05M3.1 11.9l1.05-1.05" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
 
     <div class="filter-bar">
@@ -102,6 +102,43 @@
   </header>
 
   <main>
+    <section class="hero">
+      <h1 class="hero-heading">Every cocktail,<br>at your fingertips.</h1>
+      <p class="hero-body">A handpicked library of cocktail recipes — filter by spirit or vibe, check what's in your bar, and discover your next favorite drink.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" disabled>Find Your Perfect Drink</button>
+        <button class="btn btn-secondary" disabled>Surprise Me</button>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card">
+          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="4" x2="20" y2="4"/>
+            <line x1="4" y1="4" x2="12" y2="14"/>
+            <line x1="20" y1="4" x2="12" y2="14"/>
+            <line x1="12" y1="14" x2="12" y2="20"/>
+            <line x1="8" y1="20" x2="16" y2="20"/>
+          </svg>
+          <span class="stat-number" id="stat-recipes">—</span>
+          <span class="stat-label">Recipes</span>
+        </div>
+        <div class="stat-card">
+          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3h6v2l3 4.5V20a1 1 0 01-1 1H7a1 1 0 01-1-1V9.5L9 5V3z"/>
+            <line x1="6" y1="14" x2="18" y2="14"/>
+          </svg>
+          <span class="stat-number" id="stat-ingredients">—</span>
+          <span class="stat-label">Ingredients</span>
+        </div>
+        <div class="stat-card">
+          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.09 6.26L20 10l-5.91 1.74L12 18l-2.09-6.26L4 10l5.91-1.74L12 2z"/>
+          </svg>
+          <span class="stat-number" id="stat-profiles">—</span>
+          <span class="stat-label">Flavor Profiles</span>
+        </div>
+      </div>
+    </section>
+    <hr class="hero-divider">
     <div id="recipes" class="recipe-grid"></div>
   </main>
 
@@ -394,7 +431,17 @@
       localStorage.setItem('theme', next);
     });
 
+    /* ── Stats ── */
+    async function loadStats() {
+      const res = await fetch('/api/stats');
+      const s = await res.json();
+      document.getElementById('stat-recipes').textContent     = s.recipes;
+      document.getElementById('stat-ingredients').textContent = s.ingredients;
+      document.getElementById('stat-profiles').textContent    = s.flavor_profiles;
+    }
+
     loadRecipes();
+    loadStats();
   </script>
 </body>
 </html>
