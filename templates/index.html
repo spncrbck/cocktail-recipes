@@ -86,7 +86,7 @@
     </section>
 
     <div class="filter-bar">
-      <div class="filter-row">
+      <div class="filter-row" style="flex-direction: column; align-items: flex-start;">
         <span class="filter-label">Spirit</span>
         <div class="filter-chips" id="spirit-filters">
           <button class="chip active" data-spirit="all">All</button>
@@ -97,9 +97,9 @@
           <button class="chip" data-spirit="vodka">Vodka</button>
           <button class="chip" data-spirit="brandy">Brandy</button>
           <button class="chip" data-spirit="bourbon">Bourbon</button>
-          <button id="spirit-show-more" class="chip" style="font-style: italic; opacity: 0.7;">Show more</button>
         </div>
-        <div class="filter-chips" id="spirit-filters-extra" style="display: none;"></div>
+        <button id="spirit-show-more" class="chip" style="font-style: italic; opacity: 0.6; margin-top: 0.4rem;">Show more</button>
+        <div class="filter-chips" id="spirit-filters-extra" style="display: none; margin-top: 0.4rem;"></div>
       </div>
       <div class="filter-row">
         <span class="filter-label">Vibe</span>
@@ -566,7 +566,7 @@
         }
       });
 
-      let html = '';
+      let html = '<div style="margin-bottom: 1rem;"><button id="bar-clear" class="chip" style="background: var(--text-dim); color: var(--bg);">Clear all</button></div>';
       Object.entries(categories).forEach(([cat, items]) => {
         if (items.length > 0) {
           html += `<div class="bar-category">
@@ -579,6 +579,13 @@
       });
 
       document.getElementById('bar-inventory').innerHTML = html;
+
+      // Clear button handler
+      document.getElementById('bar-clear').addEventListener('click', () => {
+        barIngredients.clear();
+        document.querySelectorAll('[data-bar-ingredient]').forEach(chip => chip.classList.remove('active'));
+        applyFilters();
+      });
 
       // Re-attach bar ingredient handlers
       document.querySelectorAll('[data-bar-ingredient]').forEach(chip => {

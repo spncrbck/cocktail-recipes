@@ -110,7 +110,8 @@ body {
 
 .search-wrap {
   position: relative;
-  max-width: 300px;
+  max-width: 380px;
+  justify-self: center;
 }
 
 /* ── Theme toggle ── */
