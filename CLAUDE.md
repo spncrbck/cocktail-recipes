@@ -47,9 +47,10 @@ Render will auto-deploy within a minute or two and the change will be live.
 
 ## Branch Strategy
 
-Push directly to `master` for recipe additions and small changes. Use a feature
-branch for anything that touches `app.py`, `templates/`, or `static/` — i.e.
-changes that affect app behavior or appearance.
+- **`master`** — recipe additions (`recipes.json` only) and small config changes. Auto-deploys to Render.
+- **`dev`** — all changes to `app.py`, `templates/`, or `static/`. This is the persistent feature branch; never create a new one.
+
+When working on app/UI changes, push to `dev` with `git push origin HEAD:dev`. When the work is ready to go live, merge or push `dev` → `master`.
 
 ## Tech Stack
 
