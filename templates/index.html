@@ -95,7 +95,11 @@
           <button class="chip" data-spirit="whiskey">Whiskey</button>
           <button class="chip" data-spirit="tequila">Tequila</button>
           <button class="chip" data-spirit="vodka">Vodka</button>
+          <button class="chip" data-spirit="brandy">Brandy</button>
+          <button class="chip" data-spirit="bourbon">Bourbon</button>
+          <button id="spirit-show-more" class="chip" style="font-style: italic; opacity: 0.7;">Show more</button>
         </div>
+        <div class="filter-chips" id="spirit-filters-extra" style="display: none;"></div>
       </div>
       <div class="filter-row">
         <span class="filter-label">Vibe</span>
@@ -130,17 +134,7 @@
       </button>
       <div class="bar-panel" id="bar-panel">
         <p class="bar-intro">Select what you have — only see drinks you can make.</p>
-        <div class="bar-spirits" id="bar-spirits">
-          <button class="chip" data-bar-spirit="gin">Gin</button>
-          <button class="chip" data-bar-spirit="rum">Rum</button>
-          <button class="chip" data-bar-spirit="whiskey">Whiskey</button>
-          <button class="chip" data-bar-spirit="scotch">Scotch</button>
-          <button class="chip" data-bar-spirit="tequila">Tequila</button>
-          <button class="chip" data-bar-spirit="mezcal">Mezcal</button>
-          <button class="chip" data-bar-spirit="vodka">Vodka</button>
-          <button class="chip" data-bar-spirit="campari">Campari</button>
-          <button class="chip" data-bar-spirit="aperol">Aperol</button>
-        </div>
+        <div id="bar-inventory"></div>
       </div>
     </div>
 
@@ -248,7 +242,7 @@
     let allRecipes = [];
     let activeSpirits = new Set();
     let activeVibes  = new Set();
-    let barSpirits   = new Set();
+    let barIngredients = new Set();
 
     /* ── Bar inventory filter ── */
     const BAR_INGREDIENT_MAP = {
@@ -349,8 +343,11 @@
         );
       }
 
-      if (barSpirits.size > 0) {
-        results = results.filter(canMakeWithBar);
+      if (barIngredients.size > 0) {
+        results = results.filter(r => {
+          const recipeIngredients = new Set(r.ingredients.map(i => i.name));
+          return [...barIngredients].some(bi => recipeIngredients.has(bi));
+        });
       }
 
       const q = document.getElementById('search').value.trim().toLowerCase();
@@ -368,42 +365,22 @@
     async function loadRecipes() {
       const res = await fetch('/api/recipes');
       allRecipes = await res.json();
+      buildDynamicFilters();
       applyFilters();
     }
 
     /* ── Spirit filter chips (multi-select, OR logic) ── */
-    document.getElementById('spirit-filters').addEventListener('click', e => {
-      const chip = e.target.closest('[data-spirit]');
-      if (!chip) return;
-      const spirit = chip.dataset.spirit;
-      if (spirit === 'all') {
-        activeSpirits.clear();
-        document.querySelectorAll('#spirit-filters .chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-      } else {
-        document.querySelector('#spirit-filters [data-spirit="all"]').classList.remove('active');
-        if (activeSpirits.has(spirit)) {
-          activeSpirits.delete(spirit);
-          chip.classList.remove('active');
-          if (activeSpirits.size === 0) {
-            document.querySelector('#spirit-filters [data-spirit="all"]').classList.add('active');
-          }
-        } else {
-          activeSpirits.add(spirit);
-          chip.classList.add('active');
-        }
-      }
-      applyFilters();
-    });
+    document.getElementById('spirit-filters').addEventListener('click', spiritFilterHandler);
+    document.getElementById('spirit-filters-extra').addEventListener('click', spiritFilterHandler);
 
     /* ── Vibe filter chips (multi-select, AND logic) ── */
-    document.getElementById('vibe-filters').addEventListener('click', e => {
+    const vibeFilterHandler = (e) => {
       const chip = e.target.closest('[data-vibe]');
       if (!chip) return;
       const vibe = chip.dataset.vibe;
       if (vibe === 'all') {
         activeVibes.clear();
-        document.querySelectorAll('#vibe-filters .chip').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('#vibe-filters [data-vibe]').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
       } else {
         document.querySelector('#vibe-filters [data-vibe="all"]').classList.remove('active');
@@ -419,7 +396,8 @@
         }
       }
       applyFilters();
-    });
+    };
+    document.getElementById('vibe-filters').addEventListener('click', vibeFilterHandler);
 
     /* ── Search ── */
     let timer;
@@ -436,20 +414,6 @@
       panel.classList.toggle('visible');
     });
 
-    /* ── Bar spirit chips (multi-select, OR logic) ── */
-    document.getElementById('bar-spirits').addEventListener('click', e => {
-      const chip = e.target.closest('[data-bar-spirit]');
-      if (!chip) return;
-      const spirit = chip.dataset.barSpirit;
-      if (barSpirits.has(spirit)) {
-        barSpirits.delete(spirit);
-        chip.classList.remove('active');
-      } else {
-        barSpirits.add(spirit);
-        chip.classList.add('active');
-      }
-      applyFilters();
-    });
 
     /* ── Theme toggle ── */
     document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -511,6 +475,161 @@
       card.addEventListener('click', toggle);
       card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
     });
+
+    /* ── Build dynamic filter content ── */
+    function buildDynamicFilters() {
+      // Extract all spirits from recipes
+      const allSpirits = new Set();
+      allRecipes.forEach(r => {
+        const spirit = detectSpirit(r.ingredients);
+        if (spirit !== 'other') allSpirits.add(spirit);
+      });
+
+      // Common spirits to show by default
+      const commonSpirits = ['gin', 'rum', 'whiskey', 'tequila', 'vodka', 'brandy', 'bourbon'];
+      const extraSpirits = [...allSpirits].filter(s => !commonSpirits.includes(s)).sort();
+
+      // Build "show more" button for extra spirits
+      if (extraSpirits.length > 0) {
+        const extraContainer = document.getElementById('spirit-filters-extra');
+        extraContainer.innerHTML = extraSpirits.map(s =>
+          `<button class="chip" data-spirit="${s}">${s.charAt(0).toUpperCase() + s.slice(1)}</button>`
+        ).join('');
+
+        const showMoreBtn = document.getElementById('spirit-show-more');
+        showMoreBtn.addEventListener('click', e => {
+          e.preventDefault();
+          extraContainer.style.display = extraContainer.style.display === 'none' ? 'flex' : 'none';
+          showMoreBtn.textContent = extraContainer.style.display === 'none' ? 'Show more' : 'Show less';
+
+          // Re-attach handlers for new spirit chips
+          extraContainer.querySelectorAll('[data-spirit]').forEach(chip => {
+            chip.addEventListener('click', spiritFilterHandler);
+          });
+        });
+      } else {
+        document.getElementById('spirit-show-more').style.display = 'none';
+      }
+
+      // Extract all flavor tags and ensure they're in the vibe filter
+      const allFlavors = [...new Set(allRecipes.flatMap(r => r.flavor_tags || []))].sort();
+      const existingFlavors = new Set([...document.querySelectorAll('#vibe-filters [data-vibe]')].map(c => c.dataset.vibe).filter(v => v !== 'all'));
+      const missingFlavors = allFlavors.filter(f => !existingFlavors.has(f));
+
+      if (missingFlavors.length > 0) {
+        const vibeFilters = document.getElementById('vibe-filters');
+        missingFlavors.forEach(f => {
+          const btn = document.createElement('button');
+          btn.className = 'chip';
+          btn.dataset.vibe = f;
+          btn.textContent = f.charAt(0).toUpperCase() + f.slice(1);
+          vibeFilters.appendChild(btn);
+        });
+      }
+
+      // Build "What's in your bar" with categorized ingredients
+      buildBarInventory();
+    }
+
+    function buildBarInventory() {
+      const SPIRITS_KEYWORDS = {
+        gin: /\bgin\b/i,
+        rum: /\brum\b/i,
+        whiskey: /\b(whiskey|whisky|bourbon|rye|scotch|laphroaig|irish whiskey)\b/i,
+        tequila: /\btequila\b/i,
+        mezcal: /\bmezcal\b/i,
+        vodka: /\bvodka\b/i,
+        brandy: /\bbrandy\b/i,
+      };
+
+      const LIQUEUR_KEYWORDS = /\b(liqueur|aperol|campari|amaretto|kahlúa|cointreau|vermouth|curaçao|triple sec|maraschino|chartreuse|benedictine|amaro|cordial)\b/i;
+      const JUICE_KEYWORDS = /\b(juice|syrup|nectar|purée|soda|tonic|seltzer|ginger beer|cava)\b/i;
+      const BITTERS_KEYWORDS = /\b(bitters|dash|dashes|drop)\b/i;
+
+      const allIngredients = [...new Set(allRecipes.flatMap(r => r.ingredients.map(i => i.name)))].sort();
+
+      const categories = {
+        'Spirits': [],
+        'Liqueurs & Modifiers': [],
+        'Juices & Mixers': [],
+        'Bitters & Dashes': [],
+        'Other': []
+      };
+
+      allIngredients.forEach(ing => {
+        if (Object.values(SPIRITS_KEYWORDS).some(re => re.test(ing))) {
+          categories['Spirits'].push(ing);
+        } else if (LIQUEUR_KEYWORDS.test(ing)) {
+          categories['Liqueurs & Modifiers'].push(ing);
+        } else if (JUICE_KEYWORDS.test(ing)) {
+          categories['Juices & Mixers'].push(ing);
+        } else if (BITTERS_KEYWORDS.test(ing)) {
+          categories['Bitters & Dashes'].push(ing);
+        } else {
+          categories['Other'].push(ing);
+        }
+      });
+
+      let html = '';
+      Object.entries(categories).forEach(([cat, items]) => {
+        if (items.length > 0) {
+          html += `<div class="bar-category">
+            <p class="bar-category-label">${cat}</p>
+            <div class="bar-spirits">
+              ${items.map(ing => `<button class="chip" data-bar-ingredient="${ing}">${ing}</button>`).join('')}
+            </div>
+          </div>`;
+        }
+      });
+
+      document.getElementById('bar-inventory').innerHTML = html;
+
+      // Re-attach bar ingredient handlers
+      document.querySelectorAll('[data-bar-ingredient]').forEach(chip => {
+        chip.addEventListener('click', barIngredientHandler);
+      });
+    }
+
+    const spiritFilterHandler = (e) => {
+      const chip = e.target.closest('[data-spirit]');
+      if (!chip) return;
+      const spirit = chip.dataset.spirit;
+      if (spirit === 'all') {
+        activeSpirits.clear();
+        document.querySelectorAll('#spirit-filters [data-spirit], #spirit-filters-extra [data-spirit]').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      } else {
+        document.querySelector('#spirit-filters [data-spirit="all"]').classList.remove('active');
+        if (activeSpirits.has(spirit)) {
+          activeSpirits.delete(spirit);
+          chip.classList.remove('active');
+          if (activeSpirits.size === 0) {
+            document.querySelector('#spirit-filters [data-spirit="all"]').classList.add('active');
+          }
+        } else {
+          activeSpirits.add(spirit);
+          chip.classList.add('active');
+        }
+      }
+      applyFilters();
+    };
+
+    const barIngredientHandler = (e) => {
+      const chip = e.target.closest('[data-bar-ingredient]');
+      if (!chip) return;
+      const ing = chip.dataset.barIngredient;
+      if (barIngredients.has(ing)) {
+        barIngredients.delete(ing);
+        chip.classList.remove('active');
+      } else {
+        barIngredients.add(ing);
+        chip.classList.add('active');
+      }
+      applyFilters();
+    };
+
+    // Add barIngredients to state
+    let barIngredients = new Set();
 
     loadRecipes();
     loadStats();
