@@ -110,7 +110,7 @@
         <button class="btn btn-secondary" disabled>Surprise Me</button>
       </div>
       <div class="stat-cards">
-        <div class="stat-card">
+        <div class="stat-card" data-expand="recipes" role="button" tabindex="0">
           <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" y1="4" x2="20" y2="4"/>
             <line x1="4" y1="4" x2="12" y2="14"/>
@@ -120,22 +120,28 @@
           </svg>
           <span class="stat-number" id="stat-recipes">—</span>
           <span class="stat-label">Recipes</span>
+          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-expand="ingredients" role="button" tabindex="0">
           <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 3h6v2l3 4.5V20a1 1 0 01-1 1H7a1 1 0 01-1-1V9.5L9 5V3z"/>
             <line x1="6" y1="14" x2="18" y2="14"/>
           </svg>
           <span class="stat-number" id="stat-ingredients">—</span>
           <span class="stat-label">Ingredients</span>
+          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-expand="flavors" role="button" tabindex="0">
           <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2l2.09 6.26L20 10l-5.91 1.74L12 18l-2.09-6.26L4 10l5.91-1.74L12 2z"/>
           </svg>
           <span class="stat-number" id="stat-profiles">—</span>
           <span class="stat-label">Flavor Profiles</span>
+          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
+      </div>
+      <div class="stat-expand" id="stat-expand">
+        <div class="stat-expand-inner" id="stat-expand-inner"></div>
       </div>
     </section>
     <hr class="hero-divider">
@@ -439,6 +445,50 @@
       document.getElementById('stat-ingredients').textContent = s.ingredients;
       document.getElementById('stat-profiles').textContent    = s.flavor_profiles;
     }
+
+    /* ── Stat card expand ── */
+    let activeExpand = null;
+
+    document.querySelectorAll('.stat-card[data-expand]').forEach(card => {
+      function toggle() {
+        const key = card.dataset.expand;
+        const panel = document.getElementById('stat-expand');
+        const inner = document.getElementById('stat-expand-inner');
+
+        if (activeExpand === key) {
+          panel.classList.remove('open');
+          card.classList.remove('active');
+          activeExpand = null;
+          return;
+        }
+
+        document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        activeExpand = key;
+
+        let html = '';
+        if (key === 'recipes') {
+          const pills = allRecipes.map(r =>
+            `<a class="exp-pill" href="/recipe/${r.id}">${r.name}</a>`
+          ).join('');
+          html = `<p class="exp-label">${allRecipes.length} recipes</p><div class="exp-pills">${pills}</div>`;
+        } else if (key === 'ingredients') {
+          const names = [...new Set(allRecipes.flatMap(r => r.ingredients.map(i => i.name)))].sort((a,b) => a.localeCompare(b));
+          const pills = names.map(n => `<span class="exp-pill">${n}</span>`).join('');
+          html = `<p class="exp-label">${names.length} unique ingredients</p><div class="exp-pills">${pills}</div>`;
+        } else if (key === 'flavors') {
+          const tags = [...new Set(allRecipes.flatMap(r => r.flavor_tags || []))].sort((a,b) => a.localeCompare(b));
+          const pills = tags.map(t => `<span class="exp-pill">${t}</span>`).join('');
+          html = `<p class="exp-label">${tags.length} flavor profiles</p><div class="exp-pills">${pills}</div>`;
+        }
+
+        inner.innerHTML = html;
+        panel.classList.add('open');
+      }
+
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    });
 
     loadRecipes();
     loadStats();

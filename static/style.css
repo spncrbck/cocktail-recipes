@@ -368,6 +368,86 @@ body {
   flex: 1;
   min-width: 110px;
   max-width: 150px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+}
+
+.stat-card:hover {
+  border-color: var(--gold-dim);
+  background: var(--surface-2);
+}
+
+.stat-card.active {
+  border-color: var(--gold);
+  background: var(--surface-2);
+}
+
+.stat-chevron {
+  color: var(--text-dim);
+  transition: transform 0.25s, color 0.2s;
+  margin-top: 0.1rem;
+}
+
+.stat-card.active .stat-chevron {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+.stat-expand {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, margin-top 0.4s ease;
+  margin-top: 0;
+  width: 100%;
+}
+
+.stat-expand.open {
+  max-height: 800px;
+  margin-top: 1.5rem;
+}
+
+.stat-expand-inner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+}
+
+.exp-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dim);
+  margin-bottom: 0.85rem;
+}
+
+.exp-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-pill {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-chip);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+a.exp-pill {
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+a.exp-pill:hover {
+  color: var(--text);
+  border-color: var(--gold-dim);
 }
 
 .stat-icon {
