@@ -4,7 +4,7 @@ A web app for browsing and searching cocktail recipes.
 
 ## Live App
 
-**URL**: https://cocktail-recipes-pr3g.onrender.com
+**URL**: https://muddled.onrender.com
 
 The app is hosted on Render and auto-deploys when changes are pushed to `master`.
 
