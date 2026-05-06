@@ -40,6 +40,50 @@
         </svg>
       </button>
     </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-heading">Every cocktail,<br>at your fingertips.</h1>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" disabled>Find Your Perfect Drink</button>
+        <button class="btn btn-secondary" disabled>Surprise Me</button>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card" data-expand="recipes" role="button" tabindex="0">
+          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="4" x2="20" y2="4"/>
+            <line x1="4" y1="4" x2="12" y2="14"/>
+            <line x1="20" y1="4" x2="12" y2="14"/>
+            <line x1="12" y1="14" x2="12" y2="20"/>
+            <line x1="8" y1="20" x2="16" y2="20"/>
+          </svg>
+          <span class="stat-number" id="stat-recipes">—</span>
+          <span class="stat-label">Recipes</span>
+          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="stat-card" data-expand="ingredients" role="button" tabindex="0">
+          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3h6v2l3 4.5V20a1 1 0 01-1 1H7a1 1 0 01-1-1V9.5L9 5V3z"/>
+            <line x1="6" y1="14" x2="18" y2="14"/>
+          </svg>
+          <span class="stat-number" id="stat-ingredients">—</span>
+          <span class="stat-label">Ingredients</span>
+          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="stat-card" data-expand="flavors" role="button" tabindex="0">
+          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.09 6.26L20 10l-5.91 1.74L12 18l-2.09-6.26L4 10l5.91-1.74L12 2z"/>
+          </svg>
+          <span class="stat-number" id="stat-profiles">—</span>
+          <span class="stat-label">Flavor Profiles</span>
+          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="stat-expand" id="stat-expand">
+        <div class="stat-expand-inner" id="stat-expand-inner"></div>
+      </div>
+    </section>
 
     <div class="filter-bar">
       <div class="filter-row">
@@ -99,51 +143,7 @@
         </div>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h1 class="hero-heading">Every cocktail,<br>at your fingertips.</h1>
-      <p class="hero-body">A handpicked library of cocktail recipes — filter by spirit or vibe, check what's in your bar, and discover your next favorite drink.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary" disabled>Find Your Perfect Drink</button>
-        <button class="btn btn-secondary" disabled>Surprise Me</button>
-      </div>
-      <div class="stat-cards">
-        <div class="stat-card" data-expand="recipes" role="button" tabindex="0">
-          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="4" x2="20" y2="4"/>
-            <line x1="4" y1="4" x2="12" y2="14"/>
-            <line x1="20" y1="4" x2="12" y2="14"/>
-            <line x1="12" y1="14" x2="12" y2="20"/>
-            <line x1="8" y1="20" x2="16" y2="20"/>
-          </svg>
-          <span class="stat-number" id="stat-recipes">—</span>
-          <span class="stat-label">Recipes</span>
-          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="stat-card" data-expand="ingredients" role="button" tabindex="0">
-          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 3h6v2l3 4.5V20a1 1 0 01-1 1H7a1 1 0 01-1-1V9.5L9 5V3z"/>
-            <line x1="6" y1="14" x2="18" y2="14"/>
-          </svg>
-          <span class="stat-number" id="stat-ingredients">—</span>
-          <span class="stat-label">Ingredients</span>
-          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="stat-card" data-expand="flavors" role="button" tabindex="0">
-          <svg class="stat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2l2.09 6.26L20 10l-5.91 1.74L12 18l-2.09-6.26L4 10l5.91-1.74L12 2z"/>
-          </svg>
-          <span class="stat-number" id="stat-profiles">—</span>
-          <span class="stat-label">Flavor Profiles</span>
-          <svg class="stat-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </div>
-      <div class="stat-expand" id="stat-expand">
-        <div class="stat-expand-inner" id="stat-expand-inner"></div>
-      </div>
-    </section>
     <hr class="hero-divider">
     <div id="recipes" class="recipe-grid"></div>
   </main>
@@ -246,7 +246,7 @@
 
     /* ── State ── */
     let allRecipes = [];
-    let activeSpirit = 'all';
+    let activeSpirits = new Set();
     let activeVibes  = new Set();
     let barSpirits   = new Set();
 
@@ -296,7 +296,7 @@
         const spirit = detectSpirit(r.ingredients);
         const color  = spiritColor(spirit);
         const tags   = (r.flavor_tags || []).slice(0, 3);
-        const shown  = r.ingredients.slice(0, 4);
+        const shown  = r.ingredients.slice(0, 6);
         const extra  = r.ingredients.length - shown.length;
 
         return `
@@ -320,8 +320,15 @@
                 ${extra > 0 ? `<li class="more">+${extra} more</li>` : ''}
               </ul>
               <div class="card-meta">
-                ${r.vessel ? `<span>${r.vessel}</span>` : ''}
-                ${r.served  ? `<span>${r.served}</span>`  : ''}
+                ${(() => {
+                  const parts = [];
+                  if (r.vessel) parts.push(r.vessel);
+                  if (r.served) {
+                    const servedParts = r.served.split(',').map(s => s.trim());
+                    parts.push(...servedParts);
+                  }
+                  return parts.map(p => `<span>${p}</span>`).join('');
+                })()}
               </div>
             </div>
           </a>`;
@@ -332,8 +339,8 @@
     function applyFilters() {
       let results = allRecipes;
 
-      if (activeSpirit !== 'all') {
-        results = results.filter(r => detectSpirit(r.ingredients) === activeSpirit);
+      if (activeSpirits.size > 0) {
+        results = results.filter(r => activeSpirits.has(detectSpirit(r.ingredients)));
       }
 
       if (activeVibes.size > 0) {
@@ -364,13 +371,28 @@
       applyFilters();
     }
 
-    /* ── Spirit filter chips ── */
+    /* ── Spirit filter chips (multi-select, OR logic) ── */
     document.getElementById('spirit-filters').addEventListener('click', e => {
       const chip = e.target.closest('[data-spirit]');
       if (!chip) return;
-      document.querySelectorAll('#spirit-filters .chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeSpirit = chip.dataset.spirit;
+      const spirit = chip.dataset.spirit;
+      if (spirit === 'all') {
+        activeSpirits.clear();
+        document.querySelectorAll('#spirit-filters .chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      } else {
+        document.querySelector('#spirit-filters [data-spirit="all"]').classList.remove('active');
+        if (activeSpirits.has(spirit)) {
+          activeSpirits.delete(spirit);
+          chip.classList.remove('active');
+          if (activeSpirits.size === 0) {
+            document.querySelector('#spirit-filters [data-spirit="all"]').classList.add('active');
+          }
+        } else {
+          activeSpirits.add(spirit);
+          chip.classList.add('active');
+        }
+      }
       applyFilters();
     });
 
